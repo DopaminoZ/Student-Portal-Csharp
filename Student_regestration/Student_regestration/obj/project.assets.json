@@ -506,11 +506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+      "projectUniqueName": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
       "projectName": "Student_regestration",
-      "projectPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+      "projectPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
       "packagesPath": "C:\\Users\\aliba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student_regestration\\obj\\",
+      "outputPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\visual_studio\\shared\\NuGetPackages"
