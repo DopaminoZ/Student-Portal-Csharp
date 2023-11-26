@@ -448,7 +448,7 @@
             // femalerb
             // 
             femalerb.AutoSize = true;
-            femalerb.Location = new Point(239, 8);
+            femalerb.Location = new Point(241, 8);
             femalerb.Name = "femalerb";
             femalerb.Size = new Size(63, 19);
             femalerb.TabIndex = 40;
@@ -459,7 +459,7 @@
             // malerb
             // 
             malerb.AutoSize = true;
-            malerb.Location = new Point(139, 8);
+            malerb.Location = new Point(141, 7);
             malerb.Name = "malerb";
             malerb.Size = new Size(51, 19);
             malerb.TabIndex = 39;
@@ -472,7 +472,7 @@
             materialLabel8.AutoSize = true;
             materialLabel8.Depth = 0;
             materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel8.Location = new Point(0, 8);
+            materialLabel8.Location = new Point(2, 8);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
             materialLabel8.Size = new Size(55, 19);
@@ -493,9 +493,9 @@
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(22, 464);
+            panel1.Location = new Point(20, 464);
             panel1.Name = "panel1";
-            panel1.Size = new Size(346, 32);
+            panel1.Size = new Size(348, 32);
             panel1.TabIndex = 42;
             // 
             // panel2

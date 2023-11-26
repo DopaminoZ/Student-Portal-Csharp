@@ -65,7 +65,7 @@ namespace Student_regestration
 
             }
             cmd.Parameters.AddWithValue("@Type", typebox.Text);
-            if(adminrb.Checked)
+            if (adminrb.Checked)
             {
                 cmd.Parameters.AddWithValue("@Admin", "true");
             }
@@ -73,7 +73,7 @@ namespace Student_regestration
             {
                 cmd.Parameters.AddWithValue("@Admin", "false");
             }
-            
+
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Added student to database!");
