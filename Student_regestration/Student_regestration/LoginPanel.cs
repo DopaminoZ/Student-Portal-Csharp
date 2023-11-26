@@ -30,7 +30,7 @@ namespace Student_regestration
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM LoginData WHERE Id = @ID AND Password = @pass", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @ID AND Password = @pass", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(idbox.Text));
             cmd.Parameters.AddWithValue("@pass", passwordbox.Text);
             using (SqlDataReader reader = cmd.ExecuteReader())

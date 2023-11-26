@@ -49,11 +49,31 @@ namespace Student_regestration
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into UserTab values (@RegisterationNum, @Name, @Term, @DoB)", con);
-            cmd.Parameters.AddWithValue("@RegisterationNum", int.Parse(reg.Text));
+            SqlCommand cmd = new SqlCommand("insert into Users ( Id,Password,Name,Term,DoB,Gender,Type,Admin) values (@Id,@Pass,@Name,@Term,@DoB,@Gender,@Type,@Admin)", con);
+            cmd.Parameters.AddWithValue("@Id", int.Parse(reg.Text));
+            cmd.Parameters.AddWithValue("@Pass", passbox.Text);
             cmd.Parameters.AddWithValue("@Name", name.Text);
             cmd.Parameters.AddWithValue("@DoB", dateob.Value);
             cmd.Parameters.AddWithValue("@Term", int.Parse(term.Text));
+            if (malerb.Checked)
+            {
+                cmd.Parameters.AddWithValue("@Gender", "Male");
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Gender", "Female");
+
+            }
+            cmd.Parameters.AddWithValue("@Type", typebox.Text);
+            if(adminrb.Checked)
+            {
+                cmd.Parameters.AddWithValue("@Admin", "true");
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Admin", "false");
+            }
+            
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Added student to database!");
@@ -68,7 +88,7 @@ namespace Student_regestration
             deletename.Text = "Student Name - ";
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("Delete UserTab where RegisterationNum = @ID ", con);
+            SqlCommand cmd = new SqlCommand("Delete Users where Id = @ID ", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regdel.Text));
             cmd.ExecuteNonQuery();
             con.Close();
@@ -91,7 +111,7 @@ namespace Student_regestration
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Name FROM UserTab WHERE RegisterationNum = @ID", con);
+            SqlCommand cmd = new SqlCommand("SELECT Name FROM Users WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regdel.Text));
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
@@ -118,7 +138,7 @@ namespace Student_regestration
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE UserTab SET Name = @Name, DoB = @Date, Term = @Term WHERE RegisterationNum = @ID", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Users SET Name = @Name, DoB = @Date, Term = @Term WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regmod.Text));
             cmd.Parameters.AddWithValue("@Name", newname);
             cmd.Parameters.AddWithValue("@Term", int.Parse(newterm));
@@ -139,7 +159,7 @@ namespace Student_regestration
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-CQ83DFV\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM UserTab WHERE RegisterationNum = @ID", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regmod.Text));
             using (SqlDataReader reader = cmd.ExecuteReader())
             {

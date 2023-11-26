@@ -54,6 +54,20 @@
             materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             displaymod = new Label();
             materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            passbox = new TextBox();
+            materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            adminrb = new RadioButton();
+            nonadminrb = new RadioButton();
+            femalerb = new RadioButton();
+            malerb = new RadioButton();
+            materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            typebox = new ComboBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // materialButton1
@@ -93,7 +107,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(22, 295);
+            materialLabel2.Location = new Point(22, 324);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(47, 19);
@@ -105,7 +119,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(22, 353);
+            materialLabel3.Location = new Point(22, 382);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(42, 19);
@@ -117,7 +131,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(22, 323);
+            materialLabel4.Location = new Point(22, 352);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(35, 19);
@@ -133,21 +147,21 @@
             // 
             // name
             // 
-            name.Location = new Point(149, 293);
+            name.Location = new Point(149, 322);
             name.Name = "name";
             name.Size = new Size(219, 23);
             name.TabIndex = 7;
             // 
             // term
             // 
-            term.Location = new Point(149, 349);
+            term.Location = new Point(149, 382);
             term.Name = "term";
             term.Size = new Size(219, 23);
             term.TabIndex = 9;
             // 
             // dateob
             // 
-            dateob.Location = new Point(149, 322);
+            dateob.Location = new Point(149, 351);
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
             dateob.Size = new Size(219, 23);
@@ -366,12 +380,147 @@
             materialButton4.UseVisualStyleBackColor = true;
             materialButton4.Click += materialButton4_Click;
             // 
+            // passbox
+            // 
+            passbox.Location = new Point(149, 292);
+            passbox.Name = "passbox";
+            passbox.Size = new Size(219, 23);
+            passbox.TabIndex = 32;
+            // 
+            // materialLabel11
+            // 
+            materialLabel11.AutoSize = true;
+            materialLabel11.Depth = 0;
+            materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel11.Location = new Point(22, 296);
+            materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel11.Name = "materialLabel11";
+            materialLabel11.Size = new Size(75, 19);
+            materialLabel11.TabIndex = 31;
+            materialLabel11.Text = "Password:";
+            // 
+            // materialLabel12
+            // 
+            materialLabel12.AutoSize = true;
+            materialLabel12.Depth = 0;
+            materialLabel12.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel12.Location = new Point(22, 411);
+            materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel12.Name = "materialLabel12";
+            materialLabel12.Size = new Size(40, 19);
+            materialLabel12.TabIndex = 33;
+            materialLabel12.Text = "Type:";
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(2, 5);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(123, 19);
+            materialLabel7.TabIndex = 35;
+            materialLabel7.Text = "Admin Privileges:";
+            // 
+            // adminrb
+            // 
+            adminrb.AutoSize = true;
+            adminrb.Location = new Point(141, 5);
+            adminrb.Name = "adminrb";
+            adminrb.Size = new Size(61, 19);
+            adminrb.TabIndex = 36;
+            adminrb.TabStop = true;
+            adminrb.Text = "Admin";
+            adminrb.UseVisualStyleBackColor = true;
+            // 
+            // nonadminrb
+            // 
+            nonadminrb.AutoSize = true;
+            nonadminrb.Location = new Point(241, 5);
+            nonadminrb.Name = "nonadminrb";
+            nonadminrb.Size = new Size(89, 19);
+            nonadminrb.TabIndex = 37;
+            nonadminrb.TabStop = true;
+            nonadminrb.Text = "Non-Admin";
+            nonadminrb.UseVisualStyleBackColor = true;
+            // 
+            // femalerb
+            // 
+            femalerb.AutoSize = true;
+            femalerb.Location = new Point(239, 8);
+            femalerb.Name = "femalerb";
+            femalerb.Size = new Size(63, 19);
+            femalerb.TabIndex = 40;
+            femalerb.TabStop = true;
+            femalerb.Text = "Female";
+            femalerb.UseVisualStyleBackColor = true;
+            // 
+            // malerb
+            // 
+            malerb.AutoSize = true;
+            malerb.Location = new Point(139, 8);
+            malerb.Name = "malerb";
+            malerb.Size = new Size(51, 19);
+            malerb.TabIndex = 39;
+            malerb.TabStop = true;
+            malerb.Text = "Male";
+            malerb.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel8
+            // 
+            materialLabel8.AutoSize = true;
+            materialLabel8.Depth = 0;
+            materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.Location = new Point(0, 8);
+            materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel8.Name = "materialLabel8";
+            materialLabel8.Size = new Size(55, 19);
+            materialLabel8.TabIndex = 38;
+            materialLabel8.Text = "Gender:";
+            // 
+            // typebox
+            // 
+            typebox.FormattingEnabled = true;
+            typebox.Items.AddRange(new object[] { "Student", "Lecturer", "Teacher Assistant" });
+            typebox.Location = new Point(149, 411);
+            typebox.Name = "typebox";
+            typebox.Size = new Size(219, 23);
+            typebox.TabIndex = 41;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(femalerb);
+            panel1.Controls.Add(malerb);
+            panel1.Controls.Add(materialLabel8);
+            panel1.Location = new Point(22, 464);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(346, 32);
+            panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(nonadminrb);
+            panel2.Controls.Add(adminrb);
+            panel2.Controls.Add(materialLabel7);
+            panel2.ForeColor = SystemColors.ActiveCaptionText;
+            panel2.Location = new Point(20, 434);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(348, 27);
+            panel2.TabIndex = 43;
+            // 
             // AddtoDB
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1227, 643);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(typebox);
+            Controls.Add(materialLabel12);
+            Controls.Add(passbox);
+            Controls.Add(materialLabel11);
             Controls.Add(materialButton4);
             Controls.Add(displaymod);
             Controls.Add(datemod);
@@ -400,6 +549,10 @@
             Controls.Add(materialButton1);
             Name = "AddtoDB";
             Text = "Admin Panel";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -435,5 +588,20 @@
         private MaterialSkin.Controls.MaterialLabel termdisplay;
         private MaterialSkin.Controls.MaterialLabel datedisplay;
         private MaterialSkin.Controls.MaterialLabel namedisplay;
+        private TextBox passbox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private ComboBox typebox;
+        private RadioButton Admin;
+        private Panel panel1;
+        private Panel panel2;
+        private RadioButton adminrb;
+        private RadioButton nonadminrb;
+        private RadioButton femalerb;
+        private RadioButton malerb;
     }
 }
