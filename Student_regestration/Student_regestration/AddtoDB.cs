@@ -47,7 +47,7 @@ namespace Student_regestration
         //Add
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into Users ( Id,Password,Name,Term,DoB,Gender,Type,Admin) values (@Id,@Pass,@Name,@Term,@DoB,@Gender,@Type,@Admin)", con);
             cmd.Parameters.AddWithValue("@Id", int.Parse(reg.Text));
@@ -65,7 +65,7 @@ namespace Student_regestration
 
             }
             cmd.Parameters.AddWithValue("@Type", typebox.Text);
-            if(adminrb.Checked)
+            if (adminrb.Checked)
             {
                 cmd.Parameters.AddWithValue("@Admin", "true");
             }
@@ -73,7 +73,7 @@ namespace Student_regestration
             {
                 cmd.Parameters.AddWithValue("@Admin", "false");
             }
-            
+
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Added student to database!");
@@ -86,7 +86,7 @@ namespace Student_regestration
             No.Visible = false;
             Confirm.Visible = false;
             deletename.Text = "Student Name - ";
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete Users where Id = @ID ", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regdel.Text));
@@ -109,7 +109,7 @@ namespace Student_regestration
 
         private void Del_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT Name FROM Users WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regdel.Text));
@@ -136,7 +136,7 @@ namespace Student_regestration
         DateTime newdate;
         private void materialButton3_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("UPDATE Users SET Name = @Name, DoB = @Date, Term = @Term WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regmod.Text));
@@ -157,7 +157,7 @@ namespace Student_regestration
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regmod.Text));
@@ -207,6 +207,11 @@ namespace Student_regestration
         private void datemod_ValueChanged(object sender, EventArgs e)
         {
             newdate = datemod.Value;
+        }
+
+        private void typebox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

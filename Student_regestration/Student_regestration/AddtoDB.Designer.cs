@@ -77,8 +77,8 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(161, 535);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.Location = new Point(184, 713);
+            materialButton1.Margin = new Padding(5, 8, 5, 8);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
             materialButton1.NoAccentTextColor = Color.Empty;
@@ -95,7 +95,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(22, 265);
+            materialLabel1.Location = new Point(25, 353);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(116, 19);
@@ -107,7 +107,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(22, 324);
+            materialLabel2.Location = new Point(25, 432);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(47, 19);
@@ -119,7 +119,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(22, 382);
+            materialLabel3.Location = new Point(25, 509);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(42, 19);
@@ -131,7 +131,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(22, 352);
+            materialLabel4.Location = new Point(25, 469);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(35, 19);
@@ -140,31 +140,35 @@
             // 
             // reg
             // 
-            reg.Location = new Point(149, 263);
+            reg.Location = new Point(170, 351);
+            reg.Margin = new Padding(3, 4, 3, 4);
             reg.Name = "reg";
-            reg.Size = new Size(219, 23);
+            reg.Size = new Size(250, 27);
             reg.TabIndex = 6;
             // 
             // name
             // 
-            name.Location = new Point(149, 322);
+            name.Location = new Point(170, 429);
+            name.Margin = new Padding(3, 4, 3, 4);
             name.Name = "name";
-            name.Size = new Size(219, 23);
+            name.Size = new Size(250, 27);
             name.TabIndex = 7;
             // 
             // term
             // 
-            term.Location = new Point(149, 382);
+            term.Location = new Point(170, 509);
+            term.Margin = new Padding(3, 4, 3, 4);
             term.Name = "term";
-            term.Size = new Size(219, 23);
+            term.Size = new Size(250, 27);
             term.TabIndex = 9;
             // 
             // dateob
             // 
-            dateob.Location = new Point(149, 351);
+            dateob.Location = new Point(170, 468);
+            dateob.Margin = new Padding(3, 4, 3, 4);
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
-            dateob.Size = new Size(219, 23);
+            dateob.Size = new Size(250, 27);
             dateob.TabIndex = 10;
             dateob.Value = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             // 
@@ -173,7 +177,7 @@
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel5.Location = new Point(501, 110);
+            materialLabel5.Location = new Point(573, 147);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(199, 19);
@@ -188,8 +192,8 @@
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
-            materialButton2.Location = new Point(22, 31);
-            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.Location = new Point(25, 41);
+            materialButton2.Margin = new Padding(5, 8, 5, 8);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
             materialButton2.NoAccentTextColor = Color.Empty;
@@ -202,9 +206,10 @@
             // 
             // regdel
             // 
-            regdel.Location = new Point(546, 319);
+            regdel.Location = new Point(624, 425);
+            regdel.Margin = new Padding(3, 4, 3, 4);
             regdel.Name = "regdel";
-            regdel.Size = new Size(219, 23);
+            regdel.Size = new Size(250, 27);
             regdel.TabIndex = 14;
             // 
             // materialLabel6
@@ -212,7 +217,7 @@
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(419, 321);
+            materialLabel6.Location = new Point(479, 428);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(116, 19);
@@ -226,8 +231,8 @@
             Del.Depth = 0;
             Del.HighEmphasis = true;
             Del.Icon = null;
-            Del.Location = new Point(577, 535);
-            Del.Margin = new Padding(4, 6, 4, 6);
+            Del.Location = new Point(659, 713);
+            Del.Margin = new Padding(5, 8, 5, 8);
             Del.MouseState = MaterialSkin.MouseState.HOVER;
             Del.Name = "Del";
             Del.NoAccentTextColor = Color.Empty;
@@ -242,9 +247,9 @@
             // deletename
             // 
             deletename.AutoSize = true;
-            deletename.Location = new Point(501, 369);
+            deletename.Location = new Point(573, 492);
             deletename.Name = "deletename";
-            deletename.Size = new Size(94, 15);
+            deletename.Size = new Size(118, 20);
             deletename.TabIndex = 18;
             deletename.Text = "Student Name - ";
             // 
@@ -255,8 +260,8 @@
             materialButton3.Depth = 0;
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(985, 535);
-            materialButton3.Margin = new Padding(4, 6, 4, 6);
+            materialButton3.Location = new Point(1126, 713);
+            materialButton3.Margin = new Padding(5, 8, 5, 8);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
             materialButton3.NoAccentTextColor = Color.Empty;
@@ -270,37 +275,41 @@
             // 
             // datemod
             // 
-            datemod.Location = new Point(970, 378);
+            datemod.Location = new Point(1109, 504);
+            datemod.Margin = new Padding(3, 4, 3, 4);
             datemod.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             datemod.Name = "datemod";
-            datemod.Size = new Size(219, 23);
+            datemod.Size = new Size(250, 27);
             datemod.TabIndex = 27;
             datemod.Value = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             datemod.ValueChanged += datemod_ValueChanged;
             // 
             // termmod
             // 
-            termmod.Location = new Point(970, 405);
+            termmod.Location = new Point(1109, 540);
+            termmod.Margin = new Padding(3, 4, 3, 4);
             termmod.Name = "termmod";
             termmod.PlaceholderText = "ModifyTerm";
-            termmod.Size = new Size(219, 23);
+            termmod.Size = new Size(250, 27);
             termmod.TabIndex = 26;
             termmod.TextChanged += termmod_TextChanged;
             // 
             // namemod
             // 
-            namemod.Location = new Point(970, 349);
+            namemod.Location = new Point(1109, 465);
+            namemod.Margin = new Padding(3, 4, 3, 4);
             namemod.Name = "namemod";
             namemod.PlaceholderText = "ModifyName";
-            namemod.Size = new Size(219, 23);
+            namemod.Size = new Size(250, 27);
             namemod.TabIndex = 25;
             namemod.TextChanged += namemod_TextChanged;
             // 
             // regmod
             // 
-            regmod.Location = new Point(970, 221);
+            regmod.Location = new Point(1109, 295);
+            regmod.Margin = new Padding(3, 4, 3, 4);
             regmod.Name = "regmod";
-            regmod.Size = new Size(153, 23);
+            regmod.Size = new Size(174, 27);
             regmod.TabIndex = 24;
             // 
             // termdisplay
@@ -308,7 +317,7 @@
             termdisplay.AutoSize = true;
             termdisplay.Depth = 0;
             termdisplay.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            termdisplay.Location = new Point(880, 412);
+            termdisplay.Location = new Point(1006, 549);
             termdisplay.MouseState = MaterialSkin.MouseState.HOVER;
             termdisplay.Name = "termdisplay";
             termdisplay.Size = new Size(5, 19);
@@ -320,7 +329,7 @@
             datedisplay.AutoSize = true;
             datedisplay.Depth = 0;
             datedisplay.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            datedisplay.Location = new Point(880, 382);
+            datedisplay.Location = new Point(1006, 509);
             datedisplay.MouseState = MaterialSkin.MouseState.HOVER;
             datedisplay.Name = "datedisplay";
             datedisplay.Size = new Size(5, 19);
@@ -332,7 +341,7 @@
             namedisplay.AutoSize = true;
             namedisplay.Depth = 0;
             namedisplay.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            namedisplay.Location = new Point(880, 353);
+            namedisplay.Location = new Point(1006, 471);
             namedisplay.MouseState = MaterialSkin.MouseState.HOVER;
             namedisplay.Name = "namedisplay";
             namedisplay.Size = new Size(5, 19);
@@ -344,7 +353,7 @@
             materialLabel10.AutoSize = true;
             materialLabel10.Depth = 0;
             materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel10.Location = new Point(843, 223);
+            materialLabel10.Location = new Point(963, 297);
             materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel10.Name = "materialLabel10";
             materialLabel10.Size = new Size(116, 19);
@@ -354,9 +363,9 @@
             // displaymod
             // 
             displaymod.AutoSize = true;
-            displaymod.Location = new Point(905, 263);
+            displaymod.Location = new Point(1034, 351);
             displaymod.Name = "displaymod";
-            displaymod.Size = new Size(94, 15);
+            displaymod.Size = new Size(118, 20);
             displaymod.TabIndex = 28;
             displaymod.Text = "Student Name - ";
             // 
@@ -367,8 +376,8 @@
             materialButton4.Depth = 0;
             materialButton4.HighEmphasis = true;
             materialButton4.Icon = null;
-            materialButton4.Location = new Point(1130, 213);
-            materialButton4.Margin = new Padding(4, 6, 4, 6);
+            materialButton4.Location = new Point(1291, 284);
+            materialButton4.Margin = new Padding(5, 8, 5, 8);
             materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton4.Name = "materialButton4";
             materialButton4.NoAccentTextColor = Color.Empty;
@@ -382,9 +391,10 @@
             // 
             // passbox
             // 
-            passbox.Location = new Point(149, 292);
+            passbox.Location = new Point(170, 389);
+            passbox.Margin = new Padding(3, 4, 3, 4);
             passbox.Name = "passbox";
-            passbox.Size = new Size(219, 23);
+            passbox.Size = new Size(250, 27);
             passbox.TabIndex = 32;
             // 
             // materialLabel11
@@ -392,7 +402,7 @@
             materialLabel11.AutoSize = true;
             materialLabel11.Depth = 0;
             materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel11.Location = new Point(22, 296);
+            materialLabel11.Location = new Point(25, 395);
             materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel11.Name = "materialLabel11";
             materialLabel11.Size = new Size(75, 19);
@@ -404,7 +414,7 @@
             materialLabel12.AutoSize = true;
             materialLabel12.Depth = 0;
             materialLabel12.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel12.Location = new Point(22, 411);
+            materialLabel12.Location = new Point(25, 548);
             materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel12.Name = "materialLabel12";
             materialLabel12.Size = new Size(40, 19);
@@ -416,7 +426,7 @@
             materialLabel7.AutoSize = true;
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel7.Location = new Point(2, 5);
+            materialLabel7.Location = new Point(2, 7);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
             materialLabel7.Size = new Size(123, 19);
@@ -426,9 +436,10 @@
             // adminrb
             // 
             adminrb.AutoSize = true;
-            adminrb.Location = new Point(141, 5);
+            adminrb.Location = new Point(161, 7);
+            adminrb.Margin = new Padding(3, 4, 3, 4);
             adminrb.Name = "adminrb";
-            adminrb.Size = new Size(61, 19);
+            adminrb.Size = new Size(74, 24);
             adminrb.TabIndex = 36;
             adminrb.TabStop = true;
             adminrb.Text = "Admin";
@@ -437,9 +448,10 @@
             // nonadminrb
             // 
             nonadminrb.AutoSize = true;
-            nonadminrb.Location = new Point(241, 5);
+            nonadminrb.Location = new Point(275, 7);
+            nonadminrb.Margin = new Padding(3, 4, 3, 4);
             nonadminrb.Name = "nonadminrb";
-            nonadminrb.Size = new Size(89, 19);
+            nonadminrb.Size = new Size(108, 24);
             nonadminrb.TabIndex = 37;
             nonadminrb.TabStop = true;
             nonadminrb.Text = "Non-Admin";
@@ -448,9 +460,10 @@
             // femalerb
             // 
             femalerb.AutoSize = true;
-            femalerb.Location = new Point(239, 8);
+            femalerb.Location = new Point(273, 11);
+            femalerb.Margin = new Padding(3, 4, 3, 4);
             femalerb.Name = "femalerb";
-            femalerb.Size = new Size(63, 19);
+            femalerb.Size = new Size(78, 24);
             femalerb.TabIndex = 40;
             femalerb.TabStop = true;
             femalerb.Text = "Female";
@@ -459,9 +472,10 @@
             // malerb
             // 
             malerb.AutoSize = true;
-            malerb.Location = new Point(139, 8);
+            malerb.Location = new Point(159, 11);
+            malerb.Margin = new Padding(3, 4, 3, 4);
             malerb.Name = "malerb";
-            malerb.Size = new Size(51, 19);
+            malerb.Size = new Size(63, 24);
             malerb.TabIndex = 39;
             malerb.TabStop = true;
             malerb.Text = "Male";
@@ -472,7 +486,7 @@
             materialLabel8.AutoSize = true;
             materialLabel8.Depth = 0;
             materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel8.Location = new Point(0, 8);
+            materialLabel8.Location = new Point(0, 11);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
             materialLabel8.Size = new Size(55, 19);
@@ -483,19 +497,22 @@
             // 
             typebox.FormattingEnabled = true;
             typebox.Items.AddRange(new object[] { "Student", "Lecturer", "Teacher Assistant" });
-            typebox.Location = new Point(149, 411);
+            typebox.Location = new Point(170, 548);
+            typebox.Margin = new Padding(3, 4, 3, 4);
             typebox.Name = "typebox";
-            typebox.Size = new Size(219, 23);
+            typebox.Size = new Size(250, 28);
             typebox.TabIndex = 41;
+            typebox.SelectedIndexChanged += typebox_SelectedIndexChanged;
             // 
             // panel1
             // 
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(22, 464);
+            panel1.Location = new Point(25, 619);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(346, 32);
+            panel1.Size = new Size(395, 43);
             panel1.TabIndex = 42;
             // 
             // panel2
@@ -504,17 +521,18 @@
             panel2.Controls.Add(adminrb);
             panel2.Controls.Add(materialLabel7);
             panel2.ForeColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(20, 434);
+            panel2.Location = new Point(23, 579);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(348, 27);
+            panel2.Size = new Size(398, 36);
             panel2.TabIndex = 43;
             // 
             // AddtoDB
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1227, 643);
+            ClientSize = new Size(1402, 857);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(typebox);
@@ -547,6 +565,7 @@
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
             Controls.Add(materialButton1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddtoDB";
             Text = "Admin Panel";
             panel1.ResumeLayout(false);

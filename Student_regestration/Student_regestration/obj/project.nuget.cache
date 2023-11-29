@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2fHG3AhOPRjcbsuPOoFiVl5jq5dP3wBO+A6nlUzAE+J+ELPvPb972Tbpv8cRZvrPgczAYvNFplTKGVQolDvKgQ==",
+  "dgSpecHash": "KfRPi8WXkN2SGUqZNGILPFafiBdaxPolaWqDnYfzFIcTeaAqnMMApp948IHST+nHrdgRtIecW2KJUOrS7TnzNw==",
   "success": true,
-  "projectFilePath": "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+  "projectFilePath": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mega Solar Power\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\Mega Solar Power\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

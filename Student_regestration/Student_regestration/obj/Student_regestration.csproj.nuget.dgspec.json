@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {}
+    "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {}
   },
   "projects": {
-    "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {
+    "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+        "projectUniqueName": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
         "projectName": "Student_regestration",
-        "projectPath": "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+        "projectPath": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
         "packagesPath": "C:\\Users\\Mega Solar Power\\.nuget\\packages\\",
-        "outputPath": "F:\\Ali\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\obj\\",
+        "outputPath": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mega Solar Power\\AppData\\Roaming\\NuGet\\NuGet.Config",

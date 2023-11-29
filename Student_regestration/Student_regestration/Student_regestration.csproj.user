@@ -4,6 +4,12 @@
     <Compile Update="AddtoDB.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Grade_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginPanel.cs">
       <SubType>Form</SubType>
     </Compile>
