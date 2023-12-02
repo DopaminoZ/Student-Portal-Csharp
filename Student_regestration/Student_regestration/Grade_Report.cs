@@ -67,8 +67,9 @@ namespace Student_regestration
         }
         public void UpdateValues()
         {
+            string[] markz = new string[6] { "CC319", "CC317", "NE466", "EC339", "EC320", "BA323" };
             string[] parts = new string[6];
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", RegIdz);
@@ -77,42 +78,42 @@ namespace Student_regestration
                 if (reader.Read())
                 {
                     title.Text = "Grade Report for " + RegIdz;
-                    ReturnMarks(ref parts, reader["mark1"].ToString());
+                    ReturnMarks(ref parts, reader[markz[0]].ToString());
                     code1.Text = parts[0];
                     name1.Text = parts[1];
                     mark71.Text = parts[2];
                     mark121.Text = parts[3];
                     mark1.Text = parts[4];
                     markG1.Text = parts[5];
-                    ReturnMarks(ref parts, reader["mark2"].ToString());
+                    ReturnMarks(ref parts, reader[markz[1]].ToString());
                     code2.Text = parts[0];
                     name2.Text = parts[1];
                     mark72.Text = parts[2];
                     mark122.Text = parts[3];
                     mark2.Text = parts[4];
                     markG2.Text = parts[5];
-                    ReturnMarks(ref parts, reader["mark3"].ToString());
+                    ReturnMarks(ref parts, reader[markz[2]].ToString());
                     code3.Text = parts[0];
                     name3.Text = parts[1];
                     mark73.Text = parts[2];
                     mark123.Text = parts[3];
                     mark3.Text = parts[4];
                     markG3.Text = parts[5];
-                    ReturnMarks(ref parts, reader["mark4"].ToString());
+                    ReturnMarks(ref parts, reader[markz[3]].ToString());
                     code4.Text = parts[0];
                     name4.Text = parts[1];
                     mark74.Text = parts[2];
                     mark124.Text = parts[3];
                     mark4.Text = parts[4];
                     markG4.Text = parts[5];
-                    ReturnMarks(ref parts, reader["mark5"].ToString());
+                    ReturnMarks(ref parts, reader[markz[4]].ToString());
                     code5.Text = parts[0];
                     name5.Text = parts[1];
                     mark75.Text = parts[2];
                     mark125.Text = parts[3];
                     mark5.Text = parts[4];
                     markG5.Text = parts[5];
-                    ReturnMarks(ref parts, reader["mark6"].ToString());
+                    ReturnMarks(ref parts, reader[markz[5]].ToString());
                     code6.Text = parts[0];
                     name6.Text = parts[1];
                     mark76.Text = parts[2];

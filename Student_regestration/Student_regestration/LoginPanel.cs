@@ -27,7 +27,7 @@ namespace Student_regestration
         }
         private void AuthUser()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @ID AND Password = @pass", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(idbox.Text));
@@ -36,8 +36,8 @@ namespace Student_regestration
             {
                 if (reader.Read())
                 {
-                    int RegId= int.Parse(reader["ID"].ToString());
-                    int TermLec = int.Parse(reader["Term"].ToString());
+                    int RegId= int.Parse(reader["Id"].ToString());
+                    
                     label3.Text = "Login successful...";
                     if (reader["Admin"].ToString() == "true")
                     {
@@ -46,12 +46,15 @@ namespace Student_regestration
                     }
                     if (reader["Type"].ToString() == "Student")
                     {
+                        MessageBox.Show("Sup big studs");
                         Grade_Report GR = new Grade_Report(RegId);
                         GR.Show();
                     }
                     if (reader["Type"].ToString() == "Lecturer")
                     {
-                        Lecturer LP = new Lecturer(TermLec);
+                        int TermLec = int.Parse(reader["Term"].ToString());
+                        string TermSub = reader["Subject"].ToString();
+                        Lecturer LP = new Lecturer(TermLec, TermSub);
                         LP.Show();
                     }
                     

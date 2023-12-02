@@ -66,6 +66,8 @@
             typebox = new ComboBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
+            materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -150,14 +152,14 @@
             name.Location = new Point(149, 322);
             name.Name = "name";
             name.Size = new Size(219, 23);
-            name.TabIndex = 7;
+            name.TabIndex = 8;
             // 
             // term
             // 
             term.Location = new Point(149, 382);
             term.Name = "term";
             term.Size = new Size(219, 23);
-            term.TabIndex = 9;
+            term.TabIndex = 10;
             // 
             // dateob
             // 
@@ -165,7 +167,7 @@
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
             dateob.Size = new Size(219, 23);
-            dateob.TabIndex = 10;
+            dateob.TabIndex = 9;
             dateob.Value = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             // 
             // materialLabel5
@@ -205,7 +207,7 @@
             regdel.Location = new Point(546, 319);
             regdel.Name = "regdel";
             regdel.Size = new Size(219, 23);
-            regdel.TabIndex = 14;
+            regdel.TabIndex = 13;
             // 
             // materialLabel6
             // 
@@ -274,7 +276,7 @@
             datemod.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             datemod.Name = "datemod";
             datemod.Size = new Size(219, 23);
-            datemod.TabIndex = 27;
+            datemod.TabIndex = 16;
             datemod.Value = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             datemod.ValueChanged += datemod_ValueChanged;
             // 
@@ -284,7 +286,7 @@
             termmod.Name = "termmod";
             termmod.PlaceholderText = "ModifyTerm";
             termmod.Size = new Size(219, 23);
-            termmod.TabIndex = 26;
+            termmod.TabIndex = 17;
             termmod.TextChanged += termmod_TextChanged;
             // 
             // namemod
@@ -293,7 +295,7 @@
             namemod.Name = "namemod";
             namemod.PlaceholderText = "ModifyName";
             namemod.Size = new Size(219, 23);
-            namemod.TabIndex = 25;
+            namemod.TabIndex = 15;
             namemod.TextChanged += namemod_TextChanged;
             // 
             // regmod
@@ -301,7 +303,7 @@
             regmod.Location = new Point(970, 221);
             regmod.Name = "regmod";
             regmod.Size = new Size(153, 23);
-            regmod.TabIndex = 24;
+            regmod.TabIndex = 14;
             // 
             // termdisplay
             // 
@@ -385,7 +387,7 @@
             passbox.Location = new Point(149, 292);
             passbox.Name = "passbox";
             passbox.Size = new Size(219, 23);
-            passbox.TabIndex = 32;
+            passbox.TabIndex = 7;
             // 
             // materialLabel11
             // 
@@ -482,18 +484,18 @@
             // typebox
             // 
             typebox.FormattingEnabled = true;
-            typebox.Items.AddRange(new object[] { "Student", "Lecturer", "Teacher Assistant" });
+            typebox.Items.AddRange(new object[] { "Student", "Lecturer", "Teaching Assistant" });
             typebox.Location = new Point(149, 411);
             typebox.Name = "typebox";
             typebox.Size = new Size(219, 23);
-            typebox.TabIndex = 41;
+            typebox.TabIndex = 11;
             // 
             // panel1
             // 
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(20, 464);
+            panel1.Location = new Point(22, 494);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 32);
             panel1.TabIndex = 42;
@@ -504,10 +506,31 @@
             panel2.Controls.Add(adminrb);
             panel2.Controls.Add(materialLabel7);
             panel2.ForeColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(20, 434);
+            panel2.Location = new Point(22, 464);
             panel2.Name = "panel2";
             panel2.Size = new Size(348, 27);
             panel2.TabIndex = 43;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "CC319", "CC317", "BA323", "EC339", "NE466", "EC320" });
+            comboBox1.Location = new Point(149, 440);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(219, 23);
+            comboBox1.TabIndex = 12;
+            // 
+            // materialLabel13
+            // 
+            materialLabel13.AutoSize = true;
+            materialLabel13.Depth = 0;
+            materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel13.Location = new Point(22, 440);
+            materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel13.Name = "materialLabel13";
+            materialLabel13.Size = new Size(58, 19);
+            materialLabel13.TabIndex = 44;
+            materialLabel13.Text = "Subject:";
             // 
             // AddtoDB
             // 
@@ -515,6 +538,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1227, 643);
+            Controls.Add(comboBox1);
+            Controls.Add(materialLabel13);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(typebox);
@@ -603,5 +628,7 @@
         private RadioButton nonadminrb;
         private RadioButton femalerb;
         private RadioButton malerb;
+        private ComboBox comboBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel13;
     }
 }

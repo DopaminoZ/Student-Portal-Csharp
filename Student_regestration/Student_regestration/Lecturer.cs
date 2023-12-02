@@ -16,18 +16,20 @@ namespace Student_regestration
 {
     public partial class Lecturer : Form
     {
-        public Lecturer(int Term)
+        public Lecturer(int Term, string Subject)
         {
             InitializeComponent();
             LecturerTerm = Term;
+            LecturerSubject = Subject;
             ShowStudentList();
         }
         private int LecturerTerm;
+        private string LecturerSubject;
         public void ShowStudentList()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teacher Assistant'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teaching Assistant'", con);
             cmd.Parameters.AddWithValue("@ID", LecturerTerm);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
@@ -145,8 +147,8 @@ namespace Student_regestration
         string[] x = new string[6];
         public void displayGrades()
         {
-
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            string sub = LecturerSubject;
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
@@ -154,7 +156,7 @@ namespace Student_regestration
             {
                 if (reader.Read())
                 {
-                    ReturnMarks(ref x, reader["mark1"].ToString());
+                    ReturnMarks(ref x, reader[LecturerSubject].ToString());
                     text7.PlaceholderText = x[2];
                     text12.PlaceholderText = x[3];
                     textwork.PlaceholderText = x[4];
@@ -184,18 +186,19 @@ namespace Student_regestration
             x[2] = text7.Text;
             x[3] = text12.Text;
             x[4] = textwork.Text;
-            string newmark = "CC317 Digital_Systems " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE marks SET mark1 = @mark1 WHERE Id = @ID", con);
+            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark1 WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
             cmd.Parameters.AddWithValue("@mark1", newmark);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Updated the marks for user " + comboBox1.Text);
         }
-        //Dops 8yar el 8oz2 bta3 code w name fel newmark,
-        //add column fel users taba3 subject el dr
-        //Maybe replace display marks in labels not placeholder, dunno yet
+        //Dops 8yar el 8oz2 bta3 code w name fel newmark, DONZO
+        //add column fel users taba3 subject el dr DONZO
+        //Maybe replace display marks in labels not placeholder, dunno yet WILLDO
+        //Add GPA TO STUDENT REPORT
         private void materialButton2_Click(object sender, EventArgs e)
         {
             UpdateGrades();
