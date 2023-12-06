@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Student_regestration
-build_property.ProjectDir = C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\
+build_property.ProjectDir = F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

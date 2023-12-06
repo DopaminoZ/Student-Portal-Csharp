@@ -34,6 +34,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            label4 = new Label();
             SuspendLayout();
             // 
             // loginButton
@@ -97,11 +99,42 @@
             label3.TabIndex = 5;
             label3.Text = "label3";
             // 
+            // materialButton1
+            // 
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(567, 328);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(76, 36);
+            materialButton1.TabIndex = 6;
+            materialButton1.Text = "Enroll";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(361, 372);
+            label4.Name = "label4";
+            label4.Size = new Size(282, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Interested in applying to AAST? Click here to enroll...";
+            // 
             // LoginPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(656, 396);
+            Controls.Add(label4);
+            Controls.Add(materialButton1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -122,5 +155,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private Label label4;
     }
 }

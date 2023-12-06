@@ -97,19 +97,19 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(22, 265);
+            materialLabel1.Location = new Point(22, 234);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(116, 19);
+            materialLabel1.Size = new Size(108, 19);
             materialLabel1.TabIndex = 2;
-            materialLabel1.Text = "Registeration #: ";
+            materialLabel1.Text = "Registration #: ";
             // 
             // materialLabel2
             // 
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(22, 324);
+            materialLabel2.Location = new Point(22, 293);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(47, 19);
@@ -121,7 +121,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(22, 382);
+            materialLabel3.Location = new Point(22, 351);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(42, 19);
@@ -133,7 +133,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(22, 352);
+            materialLabel4.Location = new Point(22, 321);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(35, 19);
@@ -142,28 +142,28 @@
             // 
             // reg
             // 
-            reg.Location = new Point(149, 263);
+            reg.Location = new Point(149, 232);
             reg.Name = "reg";
             reg.Size = new Size(219, 23);
             reg.TabIndex = 6;
             // 
             // name
             // 
-            name.Location = new Point(149, 322);
+            name.Location = new Point(149, 291);
             name.Name = "name";
             name.Size = new Size(219, 23);
             name.TabIndex = 8;
             // 
             // term
             // 
-            term.Location = new Point(149, 382);
+            term.Location = new Point(149, 351);
             term.Name = "term";
             term.Size = new Size(219, 23);
             term.TabIndex = 10;
             // 
             // dateob
             // 
-            dateob.Location = new Point(149, 351);
+            dateob.Location = new Point(149, 320);
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
             dateob.Size = new Size(219, 23);
@@ -175,12 +175,12 @@
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel5.Location = new Point(501, 110);
+            materialLabel5.Location = new Point(577, 104);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
-            materialLabel5.Size = new Size(199, 19);
+            materialLabel5.Size = new Size(91, 19);
             materialLabel5.TabIndex = 11;
-            materialLabel5.Text = "Database Registration Form";
+            materialLabel5.Text = "Admin Panel";
             materialLabel5.TextAlign = ContentAlignment.TopRight;
             // 
             // materialButton2
@@ -195,12 +195,13 @@
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
             materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(64, 36);
+            materialButton2.Size = new Size(87, 36);
             materialButton2.TabIndex = 12;
-            materialButton2.Text = "Back";
+            materialButton2.Text = "Sign out";
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
             // 
             // regdel
             // 
@@ -217,9 +218,9 @@
             materialLabel6.Location = new Point(419, 321);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
-            materialLabel6.Size = new Size(116, 19);
+            materialLabel6.Size = new Size(108, 19);
             materialLabel6.TabIndex = 13;
-            materialLabel6.Text = "Registeration #: ";
+            materialLabel6.Text = "Registration #: ";
             // 
             // Del
             // 
@@ -349,9 +350,9 @@
             materialLabel10.Location = new Point(843, 223);
             materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel10.Name = "materialLabel10";
-            materialLabel10.Size = new Size(116, 19);
+            materialLabel10.Size = new Size(108, 19);
             materialLabel10.TabIndex = 20;
-            materialLabel10.Text = "Registeration #: ";
+            materialLabel10.Text = "Registration #: ";
             // 
             // displaymod
             // 
@@ -384,7 +385,7 @@
             // 
             // passbox
             // 
-            passbox.Location = new Point(149, 292);
+            passbox.Location = new Point(149, 261);
             passbox.Name = "passbox";
             passbox.Size = new Size(219, 23);
             passbox.TabIndex = 7;
@@ -394,7 +395,7 @@
             materialLabel11.AutoSize = true;
             materialLabel11.Depth = 0;
             materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel11.Location = new Point(22, 296);
+            materialLabel11.Location = new Point(22, 265);
             materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel11.Name = "materialLabel11";
             materialLabel11.Size = new Size(75, 19);
@@ -406,7 +407,7 @@
             materialLabel12.AutoSize = true;
             materialLabel12.Depth = 0;
             materialLabel12.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel12.Location = new Point(22, 411);
+            materialLabel12.Location = new Point(22, 380);
             materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel12.Name = "materialLabel12";
             materialLabel12.Size = new Size(40, 19);
@@ -485,7 +486,7 @@
             // 
             typebox.FormattingEnabled = true;
             typebox.Items.AddRange(new object[] { "Student", "Lecturer", "Teaching Assistant" });
-            typebox.Location = new Point(149, 411);
+            typebox.Location = new Point(149, 380);
             typebox.Name = "typebox";
             typebox.Size = new Size(219, 23);
             typebox.TabIndex = 11;
@@ -495,7 +496,7 @@
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(22, 494);
+            panel1.Location = new Point(22, 463);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 32);
             panel1.TabIndex = 42;
@@ -506,7 +507,7 @@
             panel2.Controls.Add(adminrb);
             panel2.Controls.Add(materialLabel7);
             panel2.ForeColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(22, 464);
+            panel2.Location = new Point(22, 433);
             panel2.Name = "panel2";
             panel2.Size = new Size(348, 27);
             panel2.TabIndex = 43;
@@ -515,7 +516,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "CC319", "CC317", "BA323", "EC339", "NE466", "EC320" });
-            comboBox1.Location = new Point(149, 440);
+            comboBox1.Location = new Point(149, 409);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(219, 23);
             comboBox1.TabIndex = 12;
@@ -525,7 +526,7 @@
             materialLabel13.AutoSize = true;
             materialLabel13.Depth = 0;
             materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel13.Location = new Point(22, 440);
+            materialLabel13.Location = new Point(22, 409);
             materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel13.Name = "materialLabel13";
             materialLabel13.Size = new Size(58, 19);

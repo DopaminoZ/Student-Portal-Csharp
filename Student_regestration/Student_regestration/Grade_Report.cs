@@ -46,16 +46,16 @@ namespace Student_regestration
             {
                 i++;
             }
-            mark7 = all.Substring(j + 1, i-j-1);
+            mark7 = all.Substring(j + 1, i - j - 1);
             x[2] = mark7;
             j = i + 1;
             while (all[j] != ' ' && j < all.Length)
             {
                 j++;
             }
-            mark12 = all.Substring(i+1, j-i-1);
+            mark12 = all.Substring(i + 1, j - i - 1);
             x[3] = mark12;
-            i= j + 1;
+            i = j + 1;
             while (all[i] != ' ' && i < all.Length)
             {
                 i++;
@@ -69,7 +69,7 @@ namespace Student_regestration
         {
             string[] markz = new string[6] { "CC319", "CC317", "NE466", "EC339", "EC320", "BA323" };
             string[] parts = new string[6];
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", RegIdz);
@@ -120,10 +120,14 @@ namespace Student_regestration
                     mark126.Text = parts[3];
                     mark6.Text = parts[4];
                     markG6.Text = parts[5];
-
+                    GPA.Text = reader["GPA"].ToString();
                 }
             }
         }
 
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

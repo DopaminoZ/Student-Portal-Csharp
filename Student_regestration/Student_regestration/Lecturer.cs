@@ -27,7 +27,7 @@ namespace Student_regestration
         private string LecturerSubject;
         public void ShowStudentList()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teaching Assistant'", con);
             cmd.Parameters.AddWithValue("@ID", LecturerTerm);
@@ -88,16 +88,16 @@ namespace Student_regestration
             double[] d = new double[4];
             if (string.IsNullOrWhiteSpace(text7.Text) || string.IsNullOrWhiteSpace(text12.Text) || string.IsNullOrWhiteSpace(textwork.Text))
             {
-                if (text7.PlaceholderText != "U")
-                    d[0] = double.Parse(text7.PlaceholderText);
+                if (label5.Text != "U")
+                    d[0] = double.Parse(label5.Text);
                 else
                     d[0] = 0;
-                if (text12.PlaceholderText != "U")
-                    d[1] = double.Parse(text12.PlaceholderText);
+                if (label6.Text != "U")
+                    d[1] = double.Parse(label6.Text);
                 else
                     d[1] = 0;
-                if (textwork.PlaceholderText != "U")
-                    d[2] = double.Parse(textwork.PlaceholderText);
+                if (label7.Text != "U")
+                    d[2] = double.Parse(label7.Text);
                 else
                     d[2] = 0;
             }
@@ -124,21 +124,28 @@ namespace Student_regestration
             double score = d[0] + d[1] + d[2] + d[3];
             switch (score)
             {
-                case double s when (s >= 90 && s <= 100):
+                case double s when (s >= 97 && s <= 100):
+                    return "A+";
+                case double s when (s >= 93 && s < 97):
                     return "A";
-
-                case double s when (s >= 80 && s < 90):
+                case double s when (s >= 89 && s < 93):
+                    return "A-";
+                case double s when (s >= 86 && s < 89):
+                    return "B+";
+                case double s when (s >= 83 && s < 86):
                     return "B";
-
-                case double s when (s >= 70 && s < 80):
+                case double s when (s >= 80 && s < 83):
+                    return "B-";
+                case double s when (s >= 77 && s < 80):
+                    return "C+";
+                case double s when (s >= 73 && s < 77):
                     return "C";
-
-                case double s when (s >= 60 && s < 70):
+                case double s when (s >= 69 && s < 73):
+                    return "C-";
+                case double s when (s >= 60 && s < 63):
                     return "D";
-
                 case double s when (s < 60 && s >= 0):
                     return "F";
-
                 default:
                     return "Invalid score";
 
@@ -148,7 +155,7 @@ namespace Student_regestration
         public void displayGrades()
         {
             string sub = LecturerSubject;
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
@@ -157,9 +164,9 @@ namespace Student_regestration
                 if (reader.Read())
                 {
                     ReturnMarks(ref x, reader[LecturerSubject].ToString());
-                    text7.PlaceholderText = x[2];
-                    text12.PlaceholderText = x[3];
-                    textwork.PlaceholderText = x[4];
+                    label5.Text = x[2];
+                    label6.Text = x[3];
+                    label7.Text = x[4];
                     x[5] = calculateGrade();
                     grade.Text = "Final Grade - " + calculateGrade();
                 }
@@ -187,21 +194,24 @@ namespace Student_regestration
             x[3] = text12.Text;
             x[4] = textwork.Text;
             string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark1 WHERE Id = @ID", con);
+            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
-            cmd.Parameters.AddWithValue("@mark1", newmark);
+            cmd.Parameters.AddWithValue("@mark", newmark);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Updated the marks for user " + comboBox1.Text);
         }
-        //Dops 8yar el 8oz2 bta3 code w name fel newmark, DONZO
-        //add column fel users taba3 subject el dr DONZO
-        //Maybe replace display marks in labels not placeholder, dunno yet WILLDO
-        //Add GPA TO STUDENT REPORT
+        
         private void materialButton2_Click(object sender, EventArgs e)
         {
             UpdateGrades();
+            displayGrades();
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
