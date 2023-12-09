@@ -28,7 +28,7 @@ namespace Student_regestration
 
         public void ShowStudentList()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teaching Assistant'", con);
             cmd.Parameters.AddWithValue("@ID", LecturerTerm);
@@ -45,7 +45,7 @@ namespace Student_regestration
         public void displayGrades()
         {
             string sub = LecturerSubject;
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
@@ -111,7 +111,7 @@ namespace Student_regestration
             x[3] = text12.Text;
             x[4] = textwork.Text;
             string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));

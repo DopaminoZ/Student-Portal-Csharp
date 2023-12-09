@@ -110,3 +110,5 @@ C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestrati
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\ref\Student_regestration.dll
 F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.TA.resources
 F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.EnrollPanel.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.EnrollPanel.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.TA.resources

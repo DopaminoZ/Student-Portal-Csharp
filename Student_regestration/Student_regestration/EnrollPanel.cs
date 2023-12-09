@@ -20,7 +20,7 @@ namespace Student_regestration
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into enrollments (Name,DoB,PreferredMajor,StartDate,Email,Gender) values (@Name,@DoB,@Major,@SD,@Email,@Gender)", con);
             cmd.Parameters.AddWithValue("@Name", name.Text);

@@ -27,7 +27,7 @@ namespace Student_regestration
         }
         private void AuthUser()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @ID AND Password = @pass", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(idbox.Text));
