@@ -44,9 +44,10 @@ namespace Student_regestration
                         AddtoDB AP = new AddtoDB();
                         AP.Show();
                     }
-                    if (reader["Type"].ToString() == "Student")
+                    if (reader["Type"].ToString() == "Undergrad")
                     {
-                        Grade_Report GR = new Grade_Report(RegId);
+                        Undergrad SignedIn = new Undergrad(RegId, reader["Password"].ToString(), reader["Name"].ToString(), reader["Gender"].ToString(), reader.GetDateTime(reader.GetOrdinal("DoB")), int.Parse(reader["Term"].ToString()));
+                        Grade_Report GR = new Grade_Report(SignedIn);
                         GR.Show();
                     }
                     if (reader["Type"].ToString() == "Lecturer")

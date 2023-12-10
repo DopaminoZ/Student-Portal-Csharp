@@ -16,14 +16,12 @@ namespace Student_regestration
 {
     public partial class Grade_Report : Form
     {
-        public Grade_Report(int RegId)
+        public Grade_Report(Undergrad x)
         {
             InitializeComponent();
-            RegIdz = RegId;
-            UpdateValues();
+            x.UpdateValues(this);
         }
-        private static int RegIdz;
-        private static void ReturnMarks(ref string[] x, string all)
+        public static void ReturnMarks(ref string[] x, string all)
         {
             int i = 0;
             int j = 0;
@@ -65,65 +63,7 @@ namespace Student_regestration
             markGrade = all.Substring(i + 1);
             x[5] = markGrade;
         }
-        public void UpdateValues()
-        {
-            string[] markz = new string[6] { "CC319", "CC317", "NE466", "EC339", "EC320", "BA323" };
-            string[] parts = new string[6];
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", RegIdz);
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    title.Text = "Grade Report for " + RegIdz;
-                    ReturnMarks(ref parts, reader[markz[0]].ToString());
-                    code1.Text = parts[0];
-                    name1.Text = parts[1];
-                    mark71.Text = parts[2];
-                    mark121.Text = parts[3];
-                    mark1.Text = parts[4];
-                    markG1.Text = parts[5];
-                    ReturnMarks(ref parts, reader[markz[1]].ToString());
-                    code2.Text = parts[0];
-                    name2.Text = parts[1];
-                    mark72.Text = parts[2];
-                    mark122.Text = parts[3];
-                    mark2.Text = parts[4];
-                    markG2.Text = parts[5];
-                    ReturnMarks(ref parts, reader[markz[2]].ToString());
-                    code3.Text = parts[0];
-                    name3.Text = parts[1];
-                    mark73.Text = parts[2];
-                    mark123.Text = parts[3];
-                    mark3.Text = parts[4];
-                    markG3.Text = parts[5];
-                    ReturnMarks(ref parts, reader[markz[3]].ToString());
-                    code4.Text = parts[0];
-                    name4.Text = parts[1];
-                    mark74.Text = parts[2];
-                    mark124.Text = parts[3];
-                    mark4.Text = parts[4];
-                    markG4.Text = parts[5];
-                    ReturnMarks(ref parts, reader[markz[4]].ToString());
-                    code5.Text = parts[0];
-                    name5.Text = parts[1];
-                    mark75.Text = parts[2];
-                    mark125.Text = parts[3];
-                    mark5.Text = parts[4];
-                    markG5.Text = parts[5];
-                    ReturnMarks(ref parts, reader[markz[5]].ToString());
-                    code6.Text = parts[0];
-                    name6.Text = parts[1];
-                    mark76.Text = parts[2];
-                    mark126.Text = parts[3];
-                    mark6.Text = parts[4];
-                    markG6.Text = parts[5];
-                    GPA.Text = reader["GPA"].ToString();
-                }
-            }
-        }
+
 
         private void materialButton3_Click(object sender, EventArgs e)
         {

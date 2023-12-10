@@ -7,10 +7,10 @@
     <Compile Update="EnrollPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TA.cs">
+    <Compile Update="Grade_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Grade_Report.cs">
+    <Compile Update="TA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Lecturer.cs">
