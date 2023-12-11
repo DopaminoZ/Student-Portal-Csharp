@@ -16,11 +16,19 @@ namespace Student_regestration
 {
     public partial class Lecturer : Form
     {
-        public Lecturer(int Term, string Subject)
+        public Lecturer(int Term, string Subject, bool Admin)
         {
             InitializeComponent();
             LecturerTerm = Term;
             LecturerSubject = Subject;
+            if (Admin)
+            {
+                button1.Visible = true;
+            }
+            else
+            {
+                button1.Visible = false;
+            }
             ShowStudentList();
         }
         private int LecturerTerm;
@@ -202,7 +210,7 @@ namespace Student_regestration
             cmd.ExecuteNonQuery();
             MessageBox.Show("Updated the marks for user " + comboBox1.Text);
         }
-        
+
         private void materialButton2_Click(object sender, EventArgs e)
         {
             UpdateGrades();
@@ -212,6 +220,12 @@ namespace Student_regestration
         private void materialButton3_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminPanel AP = new AdminPanel();
+            AP.Show();
         }
     }
 }

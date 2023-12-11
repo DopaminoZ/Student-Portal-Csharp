@@ -28,8 +28,6 @@ namespace Student_regestration
             cmd.Parameters.AddWithValue("@Major", comboBox2.Text);
             cmd.Parameters.AddWithValue("@SD", comboBox1.Text);
             cmd.Parameters.AddWithValue("@Email", email.Text);
-
-
             if (malerb.Checked)
             {
                 cmd.Parameters.AddWithValue("@Gender", "Male");

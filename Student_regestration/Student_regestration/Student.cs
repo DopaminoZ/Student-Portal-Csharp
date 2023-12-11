@@ -8,7 +8,10 @@ namespace Student_regestration
 {
     public class Student : Person
     {
-        
+        public Student() : base()
+        {
+
+        }
         public Student(int ID, string Password, string Name, string Gender, DateTime DoB) : base(ID, Password, Name, Gender, DoB)
         {
           

@@ -22,7 +22,6 @@ namespace Student_regestration
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
-
             AuthUser();
         }
         private void AuthUser()
@@ -36,17 +35,12 @@ namespace Student_regestration
             {
                 if (reader.Read())
                 {
-                    int RegId = int.Parse(reader["Id"].ToString());
-
-                    label3.Text = "Login successful...";
-                    if (reader["Admin"].ToString() == "true")
-                    {
-                        AddtoDB AP = new AddtoDB();
-                        AP.Show();
-                    }
+                    int Id = int.Parse(reader["Id"].ToString());
+                    string Pass = reader["Password"].ToString();
                     if (reader["Type"].ToString() == "Undergrad")
                     {
-                        Undergrad SignedIn = new Undergrad(RegId, reader["Password"].ToString(), reader["Name"].ToString(), reader["Gender"].ToString(), reader.GetDateTime(reader.GetOrdinal("DoB")), int.Parse(reader["Term"].ToString()));
+                        Undergrad SignedIn = new Undergrad();
+                        SignedIn.FetchUserData(Id, Pass);
                         Grade_Report GR = new Grade_Report(SignedIn);
                         GR.Show();
                     }
@@ -54,25 +48,40 @@ namespace Student_regestration
                     {
                         int TermLec = int.Parse(reader["Term"].ToString());
                         string TermSub = reader["Subject"].ToString();
-                        Lecturer LP = new Lecturer(TermLec, TermSub);
-                        LP.Show();
+                        if (reader["Admin"].ToString() == "true")
+                        {
+                            Lecturer LP = new Lecturer(TermLec, TermSub, true);
+                            LP.Show();
+                        }
+                        else
+                        {
+                            Lecturer LP = new Lecturer(TermLec, TermSub, false);
+                            LP.Show();
+                        }
                     }
                     if (reader["Type"].ToString() == "Teaching Assistant")
                     {
                         int TermLec = int.Parse(reader["Term"].ToString());
                         string TermSub = reader["Subject"].ToString();
-                        TA LP = new TA(TermLec, TermSub);
-                        LP.Show();
+                        if (reader["Admin"].ToString() == "true")
+                        {
+                            TA LP = new TA(TermLec, TermSub, true);
+                            LP.Show();
+                        }
+                        else
+                        {
+                            TA LP = new TA(TermLec, TermSub, false);
+                            LP.Show();
+                        }
                     }
-
                     this.Hide();
-
                 }
                 else
                 {
                     label3.Text = "Invalid credentials, try again or talk to your supervisor...";
                 }
             }
+            con.Close();
         }
 
         private void materialButton1_Click(object sender, EventArgs e)

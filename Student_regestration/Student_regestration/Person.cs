@@ -14,6 +14,14 @@ namespace Student_regestration
         protected string Gender { get; set; }
         protected DateTime DoB { get; set; }
 
+        public Person()
+        {
+            ID = 0;
+            Password = string.Empty;
+            Name = string.Empty;
+            Gender = string.Empty;
+            DoB = DateTime.Now;
+        }
         public Person(int ID, string Password, string Name, string Gender, DateTime DoB)
         {
             this.ID = ID;

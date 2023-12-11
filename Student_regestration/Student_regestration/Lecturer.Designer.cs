@@ -44,6 +44,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -222,11 +223,22 @@
             label7.TabIndex = 16;
             label7.Text = "-";
             // 
+            // button1
+            // 
+            button1.Location = new Point(238, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(77, 26);
+            button1.TabIndex = 25;
+            button1.Text = "Admin";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Lecturer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(327, 361);
+            Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -268,5 +280,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private Button button1;
     }
 }

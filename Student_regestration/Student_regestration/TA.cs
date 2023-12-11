@@ -16,11 +16,19 @@ namespace Student_regestration
 {
     public partial class TA : Form
     {
-        public TA(int Term, string Subject)
+        public TA(int Term, string Subject, bool Admin)
         {
             InitializeComponent();
             LecturerTerm = Term;
             LecturerSubject = Subject;
+            if (Admin)
+            {
+                button1.Visible = true;
+            }
+            else
+            {
+                button1.Visible = false;
+            }
             ShowStudentList();
         }
         private int LecturerTerm;
@@ -134,6 +142,12 @@ namespace Student_regestration
         {
             UpdateGrades();
             displayGrades();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminPanel AP = new AdminPanel();
+            AP.Show();
         }
     }
 }

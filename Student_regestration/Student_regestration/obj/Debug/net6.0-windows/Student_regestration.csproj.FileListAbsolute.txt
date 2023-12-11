@@ -112,3 +112,6 @@ F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\
 F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.EnrollPanel.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.EnrollPanel.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.TA.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.AdminPanel.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.RemoveFromDB.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.ModifyDB.resources

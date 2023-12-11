@@ -40,6 +40,7 @@
             label5 = new Label();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            button1 = new Button();
             SuspendLayout();
             // 
             // textwork
@@ -170,11 +171,22 @@
             materialButton4.UseVisualStyleBackColor = true;
             materialButton4.Click += materialButton4_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(189, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(77, 26);
+            button1.TabIndex = 24;
+            button1.Text = "Admin";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // TA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(278, 300);
+            Controls.Add(button1);
             Controls.Add(materialButton4);
             Controls.Add(materialButton1);
             Controls.Add(label7);
@@ -207,5 +219,6 @@
         private Label label5;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton4;
+        private Button button1;
     }
 }

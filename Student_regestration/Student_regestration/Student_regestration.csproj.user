@@ -4,10 +4,19 @@
     <Compile Update="AddtoDB.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EnrollPanel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Grade_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ModifyDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RemoveFromDB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TA.cs">
