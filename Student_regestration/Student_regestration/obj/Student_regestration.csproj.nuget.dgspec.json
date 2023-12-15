@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {}
+    "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {}
   },
   "projects": {
-    "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {
+    "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+        "projectUniqueName": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
         "projectName": "Student_regestration",
-        "projectPath": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
-        "packagesPath": "C:\\Users\\Mega Solar Power\\.nuget\\packages\\",
-        "outputPath": "F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\obj\\",
+        "projectPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Student_regestration.csproj",
+        "packagesPath": "C:\\Users\\aliba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\visual_studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mega Solar Power\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aliba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,24 +64,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -86,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

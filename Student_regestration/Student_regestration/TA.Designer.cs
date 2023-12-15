@@ -41,11 +41,13 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialButton4 = new MaterialSkin.Controls.MaterialButton();
             button1 = new Button();
+            comboBox2 = new ComboBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // textwork
             // 
-            textwork.Location = new Point(106, 156);
+            textwork.Location = new Point(95, 195);
             textwork.Margin = new Padding(3, 2, 3, 2);
             textwork.Name = "textwork";
             textwork.Size = new Size(85, 23);
@@ -54,7 +56,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(25, 159);
+            label3.Location = new Point(14, 198);
             label3.Name = "label3";
             label3.Size = new Size(70, 15);
             label3.TabIndex = 12;
@@ -62,7 +64,7 @@
             // 
             // text12
             // 
-            text12.Location = new Point(106, 127);
+            text12.Location = new Point(95, 166);
             text12.Margin = new Padding(3, 2, 3, 2);
             text12.Name = "text12";
             text12.Size = new Size(85, 23);
@@ -71,7 +73,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 129);
+            label2.Location = new Point(14, 168);
             label2.Name = "label2";
             label2.Size = new Size(30, 15);
             label2.TabIndex = 10;
@@ -79,7 +81,7 @@
             // 
             // text7
             // 
-            text7.Location = new Point(106, 98);
+            text7.Location = new Point(95, 137);
             text7.Margin = new Padding(3, 2, 3, 2);
             text7.Name = "text7";
             text7.Size = new Size(85, 23);
@@ -88,7 +90,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 100);
+            label1.Location = new Point(14, 139);
             label1.Name = "label1";
             label1.Size = new Size(24, 15);
             label1.TabIndex = 8;
@@ -97,7 +99,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(25, 61);
+            comboBox1.Location = new Point(14, 100);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(166, 23);
@@ -107,7 +109,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(236, 159);
+            label7.Location = new Point(225, 198);
             label7.Name = "label7";
             label7.Size = new Size(12, 15);
             label7.TabIndex = 19;
@@ -116,7 +118,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(236, 129);
+            label6.Location = new Point(225, 168);
             label6.Name = "label6";
             label6.Size = new Size(12, 15);
             label6.TabIndex = 18;
@@ -125,7 +127,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(236, 100);
+            label5.Location = new Point(225, 139);
             label5.Name = "label5";
             label5.Size = new Size(12, 15);
             label5.TabIndex = 17;
@@ -181,11 +183,32 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(95, 56);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(166, 23);
+            comboBox2.TabIndex = 25;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(14, 59);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 15);
+            label4.TabIndex = 26;
+            label4.Text = "Course:";
+            // 
             // TA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(278, 300);
+            Controls.Add(label4);
+            Controls.Add(comboBox2);
             Controls.Add(button1);
             Controls.Add(materialButton4);
             Controls.Add(materialButton1);
@@ -220,5 +243,7 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton4;
         private Button button1;
+        private ComboBox comboBox2;
+        private Label label4;
     }
 }

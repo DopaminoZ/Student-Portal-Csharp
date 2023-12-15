@@ -7,6 +7,12 @@
     <Compile Update="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AdvisorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EnrollPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +20,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ModifyDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RemoveFromDB.cs">

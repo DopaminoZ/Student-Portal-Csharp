@@ -16,12 +16,12 @@ namespace Student_regestration
 {
     public partial class TA : Form
     {
-        public TA(int Term, string Subject, bool Admin)
+        TeachingAssistant xz = new TeachingAssistant();
+        public TA(TeachingAssistant a)
         {
+            xz = a;
             InitializeComponent();
-            LecturerTerm = Term;
-            LecturerSubject = Subject;
-            if (Admin)
+            if (a.Admin == "true")
             {
                 button1.Visible = true;
             }
@@ -29,30 +29,55 @@ namespace Student_regestration
             {
                 button1.Visible = false;
             }
-            ShowStudentList();
+            UpdCourseList();
+            
         }
-        private int LecturerTerm;
-        private string LecturerSubject;
-
-        public void ShowStudentList()
+        public void UpdCourseList()
         {
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teaching Assistant'", con);
-            cmd.Parameters.AddWithValue("@ID", LecturerTerm);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Courses WHERE TAs = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", xz.ID);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    string regnum = reader["Id"].ToString();
-                    comboBox1.Items.Add(regnum);
+                    string Code = reader["Code"].ToString();
+                    comboBox2.Items.Add(Code);
                 }
 
             }
         }
+        public void ShowStudentList()
+        {
+            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+            con.Open();
+            string allStudents = "";
+            string[] students;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Courses WHERE Code = @Code", con);
+            cmd.Parameters.AddWithValue("@Code", comboBox2.Text);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    allStudents = reader["Students"].ToString();
+                }
+            }
+            students = TA.getStudents(allStudents);
+            foreach (string student in students)
+            {
+                comboBox1.Items.Add(student);
+            }
+
+        }
+        static string[] getStudents(string input)
+        {
+            input = input.Substring(1);
+            string[] result = input.Split('-');
+            return result;
+        }
         public void displayGrades()
         {
-            string sub = LecturerSubject;
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
@@ -61,7 +86,7 @@ namespace Student_regestration
             {
                 if (reader.Read())
                 {
-                    ReturnMarks(ref x, reader[LecturerSubject].ToString());
+                    ReturnMarks(ref x, reader[comboBox2.Text].ToString());
                     label5.Text = x[2];
                     label6.Text = x[3];
                     label7.Text = x[4];
@@ -121,7 +146,7 @@ namespace Student_regestration
             string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark WHERE Id = @ID", con);
+            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
             cmd.Parameters.AddWithValue("@mark", newmark);
             cmd.ExecuteNonQuery();
@@ -148,6 +173,13 @@ namespace Student_regestration
         {
             AdminPanel AP = new AdminPanel();
             AP.Show();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            ShowStudentList();
+            displayGrades();
         }
     }
 }

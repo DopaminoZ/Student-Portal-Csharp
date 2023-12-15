@@ -470,7 +470,7 @@
             materialButton3.Depth = 0;
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(27, 15);
+            materialButton3.Location = new Point(622, 358);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
@@ -505,7 +505,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(696, 376);
+            ClientSize = new Size(722, 409);
             Controls.Add(GPA);
             Controls.Add(label3);
             Controls.Add(materialButton3);

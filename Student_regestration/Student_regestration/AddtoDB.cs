@@ -1,5 +1,6 @@
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -10,10 +11,15 @@ namespace Student_regestration
     {
 
 
-        public static string databaseConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True";
+        public static string databaseConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True";
         public AddtoDB()
         {
             InitializeComponent();
+            List<Course> courses = Course.loadCourses();
+            foreach (Course x in courses)
+            {
+                checkedListBox1.Items.Add(x.Code);
+            }
         }
         //Add
         private void materialButton1_Click(object sender, EventArgs e)
@@ -64,11 +70,72 @@ namespace Student_regestration
                 marks.Parameters.AddWithValue("@BA323", "BA323 Mathematics-V U U U U");
                 marks.ExecuteNonQuery();
             }
+            for(int i =0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    this.addSubjects(checkedListBox1.Items[i].ToString());
+                }
+            }
             con.Close();
             MessageBox.Show("Added person to database!");
         }
 
-
+        private void addSubjects(string mada)
+        {
+            if (string.IsNullOrEmpty(mada)) { return; }
+            if (typebox.Text == "Teaching Assistant")
+            {
+                string TAList= "";
+                SqlConnection con = new SqlConnection(databaseConnection);
+                con.Open();
+                SqlCommand read = new SqlCommand("SELECT * from Courses Where Code = @Code", con);
+                SqlCommand cmd = new SqlCommand("update Courses SET TAs = @ID Where Code = @Code", con);
+                read.Parameters.AddWithValue("@Code", mada);
+                cmd.Parameters.AddWithValue("@Code", mada);
+                using (SqlDataReader reader = read.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        TAList = reader["TAs"].ToString();
+                        TAList += "-" + int.Parse(reg.Text);
+                    }
+                    else
+                    {
+                        TAList += int.Parse(reg.Text);
+                    }
+                }
+                
+                cmd.Parameters.AddWithValue("@ID", TAList);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            } 
+            else if (typebox.Text == "Lecturer")
+            {
+                string LecList = "";
+                SqlConnection con = new SqlConnection(databaseConnection);
+                con.Open();
+                SqlCommand read = new SqlCommand("SELECT * from Courses Where Code = @Code", con);
+                SqlCommand cmd = new SqlCommand("update Courses SET Lecturers = @ID Where Code = @Code", con);
+                read.Parameters.AddWithValue("@Code", mada);
+                cmd.Parameters.AddWithValue("@Code", mada);
+                using (SqlDataReader reader = read.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        LecList = reader["Lecturers"].ToString();
+                        LecList += "-" + int.Parse(reg.Text);
+                    }
+                    else
+                    {
+                        LecList += int.Parse(reg.Text);
+                    }
+                }
+                cmd.Parameters.AddWithValue("@ID", LecList);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
 
 
         private void materialButton2_Click(object sender, EventArgs e)
@@ -76,6 +143,18 @@ namespace Student_regestration
             AdminPanel AP = new AdminPanel();
             AP.Show();
             this.Hide();
+        }
+
+        private void typebox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (typebox.Text == "Lecturer" || typebox.Text == "Teaching Assistant")
+            {
+                Staffonly.Enabled = true;
+            }
+            else
+            {
+                Staffonly.Enabled = false;
+            }
         }
     }
 }
