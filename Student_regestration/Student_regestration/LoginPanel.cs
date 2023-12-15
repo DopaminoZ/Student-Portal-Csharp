@@ -47,7 +47,7 @@ namespace Student_regestration
                     if (reader["Type"].ToString() == "Lecturer")
                     {
                         int TermLec = int.Parse(reader["Term"].ToString());
-                        string TermSub = reader["Subject"].ToString();
+                        string TermSub = reader["Subjects"].ToString();
                         if (reader["Admin"].ToString() == "true")
                         {
                             Lecturer LP = new Lecturer(TermLec, TermSub, true);
@@ -62,7 +62,7 @@ namespace Student_regestration
                     if (reader["Type"].ToString() == "Teaching Assistant")
                     {
                         int TermLec = int.Parse(reader["Term"].ToString());
-                        string TermSub = reader["Subject"].ToString();
+                        string TermSub = reader["Subjects"].ToString();
                         if (reader["Admin"].ToString() == "true")
                         {
                             TA LP = new TA(TermLec, TermSub, true);

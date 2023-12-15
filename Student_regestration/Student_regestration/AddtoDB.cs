@@ -10,7 +10,7 @@ namespace Student_regestration
     {
 
 
-        public static string databaseConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True";
+        public static string databaseConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Ali\\repo\\Student-Portal-Csharp\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True";
         public AddtoDB()
         {
             InitializeComponent();

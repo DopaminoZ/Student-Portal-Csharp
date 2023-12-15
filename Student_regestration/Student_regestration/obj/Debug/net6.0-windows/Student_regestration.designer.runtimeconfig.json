@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\aliba\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\aliba\\.nuget\\packages",
-      "D:\\visual_studio\\shared\\NuGetPackages"
+      "C:\\Users\\Mega Solar Power\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Mega Solar Power\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
