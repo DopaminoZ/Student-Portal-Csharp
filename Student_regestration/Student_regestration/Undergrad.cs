@@ -14,13 +14,16 @@ namespace Student_regestration
     public class Undergrad : Student
     {
         protected int Term { get; set; }
+        protected List<Course> Courses { get; set; }
         public Undergrad() : base()
         {
             Term = 0;
+            Courses = new List<Course>();
         }
-        public Undergrad(int ID, string Password, string Name, string Gender, DateTime DoB, int Term) : base(ID, Password, Name, Gender, DoB)
+        public Undergrad(int ID, string Password, string Name, string Gender, DateTime DoB, int Term, List<Course> Courses) : base(ID, Password, Name, Gender, DoB)
         { 
             this.Term = Term;
+            this.Courses = Courses;
         }
         private void ReturnMarks(ref string[] x, string all)
         {
