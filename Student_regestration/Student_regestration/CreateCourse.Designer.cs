@@ -61,27 +61,30 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(28, 71);
             label1.Name = "label1";
-            label1.Size = new Size(80, 15);
+            label1.Size = new Size(82, 15);
             label1.TabIndex = 1;
             label1.Text = "Course name:";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(28, 102);
             label2.Name = "label2";
-            label2.Size = new Size(76, 15);
+            label2.Size = new Size(78, 15);
             label2.TabIndex = 2;
             label2.Text = "Course code:";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(28, 131);
             label3.Name = "label3";
-            label3.Size = new Size(113, 15);
+            label3.Size = new Size(118, 15);
             label3.TabIndex = 3;
             label3.Text = "Course credit hours:";
             // 
@@ -126,10 +129,11 @@
             materialButton2.UseVisualStyleBackColor = true;
             materialButton2.Click += materialButton2_Click;
             // 
-            // CreateC
+            // CreateCourse
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(330, 310);
             Controls.Add(materialButton2);
             Controls.Add(credit);
@@ -139,7 +143,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(materialButton1);
-            Name = "CreateC";
+            Name = "CreateCourse";
             Text = "CreateC";
             ResumeLayout(false);
             PerformLayout();

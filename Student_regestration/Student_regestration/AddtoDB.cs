@@ -77,7 +77,7 @@ namespace Student_regestration
                 marks.Parameters.AddWithValue("@EC218", "EC218 Measurements U U U U");
                 marks.ExecuteNonQuery();
             }
-            for(int i =0; i < checkedListBox1.Items.Count; i++)
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 if (checkedListBox1.GetItemChecked(i))
                 {
@@ -93,7 +93,7 @@ namespace Student_regestration
             if (string.IsNullOrEmpty(mada)) { return; }
             if (typebox.Text == "Teaching Assistant")
             {
-                string TAList= "";
+                string TAList = "";
                 SqlConnection con = new SqlConnection(databaseConnection);
                 con.Open();
                 SqlCommand read = new SqlCommand("SELECT * from Courses Where Code = @Code", con);
@@ -114,11 +114,11 @@ namespace Student_regestration
                         //TAList += int.Parse(reg.Text);
                     }
                 }
-                
+
                 cmd.Parameters.AddWithValue("@ID", TAList);
                 cmd.ExecuteNonQuery();
                 con.Close();
-            } 
+            }
             else if (typebox.Text == "Lecturer")
             {
                 string LecList = "";
@@ -132,8 +132,8 @@ namespace Student_regestration
                 {
                     if (reader.Read())
                     {
-                        LecList=(reg.Text);
-                       //LecList = reader["Lecturers"].ToString();
+                        LecList = (reg.Text);
+                        //LecList = reader["Lecturers"].ToString();
                         //LecList += "-" + int.Parse(reg.Text);
                     }
                     else
@@ -167,5 +167,7 @@ namespace Student_regestration
                 Staffonly.Enabled = false;
             }
         }
+
+        
     }
 }

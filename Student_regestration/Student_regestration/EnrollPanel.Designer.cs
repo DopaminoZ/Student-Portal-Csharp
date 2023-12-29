@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnrollPanel));
             comboBox1 = new ComboBox();
             materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             panel1 = new Panel();
@@ -44,14 +45,16 @@
             email = new TextBox();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "September 2025", "January 2025" });
-            comboBox1.Location = new Point(187, 211);
+            comboBox1.Location = new Point(186, 316);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(219, 23);
             comboBox1.TabIndex = 49;
@@ -60,8 +63,8 @@
             // 
             materialLabel13.AutoSize = true;
             materialLabel13.Depth = 0;
-            materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel13.Location = new Point(60, 211);
+            materialLabel13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel13.Location = new Point(59, 316);
             materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel13.Name = "materialLabel13";
             materialLabel13.Size = new Size(76, 19);
@@ -73,7 +76,7 @@
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(60, 240);
+            panel1.Location = new Point(59, 345);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 32);
             panel1.TabIndex = 50;
@@ -104,7 +107,7 @@
             // 
             materialLabel8.AutoSize = true;
             materialLabel8.Depth = 0;
-            materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             materialLabel8.Location = new Point(2, 8);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
@@ -114,7 +117,7 @@
             // 
             // dateob
             // 
-            dateob.Location = new Point(187, 153);
+            dateob.Location = new Point(186, 258);
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
             dateob.Size = new Size(219, 23);
@@ -123,7 +126,7 @@
             // 
             // name
             // 
-            name.Location = new Point(187, 95);
+            name.Location = new Point(186, 200);
             name.Name = "name";
             name.Size = new Size(219, 23);
             name.TabIndex = 47;
@@ -132,8 +135,8 @@
             // 
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(60, 154);
+            materialLabel4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel4.Location = new Point(59, 259);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(35, 19);
@@ -144,8 +147,8 @@
             // 
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(60, 97);
+            materialLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel2.Location = new Point(59, 202);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(75, 19);
@@ -156,7 +159,7 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Architecture Engineering", "Artificial Intelligence", "Business Adminstration", "Communication Engineering", "Computer Engineering", "Computer Science", "Electrical Engineering", "Industrial Engineering", "Logistics", "Mechanic Engineering", "Medicine", "Nuclear Engineering", "Petrochemical Engineering", "Pharmacy", "Textile Engineering" });
-            comboBox2.Location = new Point(187, 182);
+            comboBox2.Location = new Point(186, 287);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(219, 23);
             comboBox2.TabIndex = 52;
@@ -165,8 +168,8 @@
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(60, 182);
+            materialLabel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel1.Location = new Point(59, 287);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(114, 19);
@@ -180,7 +183,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(60, 308);
+            materialButton1.Location = new Point(59, 396);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -195,7 +198,7 @@
             // 
             // email
             // 
-            email.Location = new Point(187, 124);
+            email.Location = new Point(186, 229);
             email.Name = "email";
             email.Size = new Size(219, 23);
             email.TabIndex = 55;
@@ -204,8 +207,8 @@
             // 
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(60, 126);
+            materialLabel3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel3.Location = new Point(59, 231);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(45, 19);
@@ -219,7 +222,7 @@
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
-            materialButton2.Location = new Point(342, 308);
+            materialButton2.Location = new Point(341, 396);
             materialButton2.Margin = new Padding(4, 6, 4, 6);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
@@ -232,11 +235,23 @@
             materialButton2.UseVisualStyleBackColor = true;
             materialButton2.Click += materialButton2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(130, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(197, 176);
+            pictureBox1.TabIndex = 58;
+            pictureBox1.TabStop = false;
+            // 
             // EnrollPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(475, 389);
+            BackColor = Color.White;
+            ClientSize = new Size(466, 460);
+            Controls.Add(pictureBox1);
             Controls.Add(materialButton2);
             Controls.Add(materialLabel3);
             Controls.Add(email);
@@ -254,6 +269,7 @@
             Text = "EnrollPanel";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,5 +292,6 @@
         private TextBox email;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private PictureBox pictureBox1;
     }
 }

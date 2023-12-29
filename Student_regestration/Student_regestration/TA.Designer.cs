@@ -56,9 +56,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(14, 198);
             label3.Name = "label3";
-            label3.Size = new Size(70, 15);
+            label3.Size = new Size(74, 15);
             label3.TabIndex = 12;
             label3.Text = "Coursework";
             // 
@@ -73,9 +74,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(14, 168);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(33, 15);
             label2.TabIndex = 10;
             label2.Text = "12th";
             // 
@@ -90,9 +92,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(14, 139);
             label1.Name = "label1";
-            label1.Size = new Size(24, 15);
+            label1.Size = new Size(26, 15);
             label1.TabIndex = 8;
             label1.Text = "7th";
             // 
@@ -196,9 +199,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(14, 59);
             label4.Name = "label4";
-            label4.Size = new Size(47, 15);
+            label4.Size = new Size(48, 15);
             label4.TabIndex = 26;
             label4.Text = "Course:";
             // 
@@ -206,6 +210,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(278, 300);
             Controls.Add(label4);
             Controls.Add(comboBox2);

@@ -198,6 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SkyBlue;
             ClientSize = new Size(465, 394);
             Controls.Add(materialButton1);
             Controls.Add(materialButton4);

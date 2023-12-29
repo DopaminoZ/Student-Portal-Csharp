@@ -30,7 +30,7 @@ namespace Student_regestration
                 button1.Visible = false;
             }
             UpdCourseList();
-            
+
         }
         public void UpdCourseList()
         {

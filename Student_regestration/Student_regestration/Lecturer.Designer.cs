@@ -62,9 +62,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(21, 105);
             label1.Name = "label1";
-            label1.Size = new Size(24, 15);
+            label1.Size = new Size(26, 15);
             label1.TabIndex = 1;
             label1.Text = "7th";
             // 
@@ -87,9 +88,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(21, 134);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(33, 15);
             label2.TabIndex = 3;
             label2.Text = "12th";
             // 
@@ -104,9 +106,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(21, 164);
             label3.Name = "label3";
-            label3.Size = new Size(70, 15);
+            label3.Size = new Size(74, 15);
             label3.TabIndex = 5;
             label3.Text = "Coursework";
             // 
@@ -133,9 +136,10 @@
             // grade
             // 
             grade.AutoSize = true;
+            grade.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grade.Location = new Point(21, 226);
             grade.Name = "grade";
-            grade.Size = new Size(77, 15);
+            grade.Size = new Size(80, 15);
             grade.TabIndex = 8;
             grade.Text = "Final Grade - ";
             // 
@@ -152,9 +156,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(21, 192);
             label4.Name = "label4";
-            label4.Size = new Size(64, 15);
+            label4.Size = new Size(65, 15);
             label4.TabIndex = 9;
             label4.Text = "Final Exam";
             // 
@@ -247,9 +252,10 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(5, 19);
             label8.Name = "label8";
-            label8.Size = new Size(47, 15);
+            label8.Size = new Size(48, 15);
             label8.TabIndex = 27;
             label8.Text = "Course:";
             // 
@@ -257,6 +263,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(327, 361);
             Controls.Add(label8);
             Controls.Add(comboBox2);
