@@ -19,7 +19,7 @@ namespace Student_regestration
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            CreateC CC = new CreateC();
+            CreateCourse CC = new CreateCourse();
             CC.Show();
             this.Hide();
         }
@@ -29,6 +29,11 @@ namespace Student_regestration
             Register RG = new Register();
             RG.Show();
             this.Hide();
+        }
+
+        private void Signout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

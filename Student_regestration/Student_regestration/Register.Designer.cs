@@ -32,11 +32,12 @@
             label1 = new Label();
             checkedListBox1 = new CheckedListBox();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            materialButton2 = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // regnum
             // 
-            regnum.Location = new Point(123, 49);
+            regnum.Location = new Point(141, 58);
             regnum.Name = "regnum";
             regnum.Size = new Size(138, 23);
             regnum.TabIndex = 0;
@@ -44,7 +45,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 52);
+            label1.Location = new Point(58, 61);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
             label1.TabIndex = 1;
@@ -53,11 +54,10 @@
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(40, 102);
+            checkedListBox1.Location = new Point(58, 111);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(221, 238);
             checkedListBox1.TabIndex = 2;
-
             // 
             // materialButton1
             // 
@@ -66,7 +66,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(40, 378);
+            materialButton1.Location = new Point(58, 387);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -79,11 +79,32 @@
             materialButton1.UseVisualStyleBackColor = true;
             materialButton1.Click += materialButton1_Click;
             // 
+            // materialButton2
+            // 
+            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton2.Depth = 0;
+            materialButton2.HighEmphasis = true;
+            materialButton2.Icon = null;
+            materialButton2.Location = new Point(215, 387);
+            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton2.Name = "materialButton2";
+            materialButton2.NoAccentTextColor = Color.Empty;
+            materialButton2.Size = new Size(64, 36);
+            materialButton2.TabIndex = 5;
+            materialButton2.Text = "Back";
+            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton2.UseAccentColor = false;
+            materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(354, 450);
+            ClientSize = new Size(345, 451);
+            Controls.Add(materialButton2);
             Controls.Add(materialButton1);
             Controls.Add(checkedListBox1);
             Controls.Add(label1);
@@ -100,5 +121,6 @@
         private Label label1;
         private CheckedListBox checkedListBox1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }

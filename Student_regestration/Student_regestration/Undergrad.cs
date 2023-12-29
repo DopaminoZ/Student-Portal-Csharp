@@ -97,6 +97,42 @@ namespace Student_regestration
             string[] coursesz = input.Split('-');
             return coursesz;
         }
+        public double gradevalue(string grade)
+        {
+            switch (grade)
+            {
+                case "A+": return 3 * 4;
+                case "A": return 3 * 4;
+                case "A-": return 3 * 3.7;
+                case "B+": return 3 * 3.3;
+                case "B": return 3 * 3;
+                case "B-": return 3 * 2.7;
+                case "C+": return 3 * 2.3;
+                case "C": return 3 * 2;
+                case "C-": return 3 * 1.7;
+                case "D": return 3 * 1;
+                case "F": return 0;
+                case "U": return 0;
+                default: return 0;
+            }
+        }
+        public double CalculateGPA(Grade_Report GR, int x)
+        {
+
+            switch (x)
+            {
+                case 0: return 0.0;
+                case 1: return gradevalue(GR.markG1.Text);
+                case 2: return gradevalue(GR.markG1.Text) + gradevalue(GR.markG2.Text);
+                case 3: return gradevalue(GR.markG1.Text) + gradevalue(GR.markG2.Text) + gradevalue(GR.markG3.Text);
+                case 4: return gradevalue(GR.markG1.Text) + gradevalue(GR.markG2.Text) + gradevalue(GR.markG3.Text) + gradevalue(GR.markG4.Text);
+                case 5: return gradevalue(GR.markG1.Text) + gradevalue(GR.markG2.Text) + gradevalue(GR.markG3.Text) + gradevalue(GR.markG4.Text) + gradevalue(GR.markG5.Text);
+                case 6: return gradevalue(GR.markG1.Text) + gradevalue(GR.markG2.Text) + gradevalue(GR.markG3.Text) + gradevalue(GR.markG4.Text) + gradevalue(GR.markG5.Text) + gradevalue(GR.markG6.Text);
+                default:return 0.0;
+            }
+
+
+        }
 
         public void FetchMarks(Grade_Report GR)
         {
@@ -114,7 +150,7 @@ namespace Student_regestration
                     GR.title.Text = "Grade Report for " + ID;
                     switch (number_of_course) {
                         case 0:
-                            GR.GPA.Text = reader["GPA"].ToString(); 
+                            GR.GPA.Text = CalculateGPA(GR, 0).ToString(); 
                             break;
                         case 1:
                             GR.panel1.Visible = true;
@@ -125,7 +161,7 @@ namespace Student_regestration
                             GR.mark121.Text = parts[3];
                             GR.mark1.Text = parts[4];
                             GR.markG1.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 1)/3).ToString();
                             break;
                         case 2:
                             GR.panel1.Visible = true;
@@ -144,7 +180,7 @@ namespace Student_regestration
                             GR.mark122.Text = parts[3];
                             GR.mark2.Text = parts[4];
                             GR.markG2.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 2)/6).ToString();
                             break;
                         case 3:
                             GR.panel1.Visible = true;
@@ -171,7 +207,7 @@ namespace Student_regestration
                             GR.mark123.Text = parts[3];
                             GR.mark3.Text = parts[4];
                             GR.markG3.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 3) / 9).ToString();
                             break;
                         case 4:
                             GR.panel1.Visible = true;
@@ -206,7 +242,7 @@ namespace Student_regestration
                             GR.mark124.Text = parts[3];
                             GR.mark4.Text = parts[4];
                             GR.markG4.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 4) / 12).ToString();
                             break;
                         case 5:
                             GR.panel1.Visible = true;
@@ -249,7 +285,7 @@ namespace Student_regestration
                             GR.mark125.Text = parts[3];
                             GR.mark5.Text = parts[4];
                             GR.markG5.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 5) / 15).ToString();
                             break;
                         case 6:
                             GR.panel1.Visible = true;
@@ -300,7 +336,7 @@ namespace Student_regestration
                             GR.mark126.Text = parts[3];
                             GR.mark6.Text = parts[4];
                             GR.markG6.Text = parts[5];
-                            GR.GPA.Text = reader["GPA"].ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 6) / 18).ToString();
                             break;
                     }
                 }

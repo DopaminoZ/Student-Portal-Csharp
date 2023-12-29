@@ -120,5 +120,6 @@ F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\
 F:\Ali\repo\Student-Portal-Csharp\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.RemoveFromDB.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.Properties.Resources.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.AdvisorPanel.resources
-C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.CreateC.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.Register.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.CreateCourse.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.ViewEnrollees.resources

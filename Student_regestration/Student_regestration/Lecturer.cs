@@ -45,7 +45,6 @@ namespace Student_regestration
                     string Code = reader["Code"].ToString();
                     comboBox2.Items.Add(Code);
                 }
-
             }
         }
         public void ShowStudentList()

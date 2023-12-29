@@ -32,6 +32,7 @@ namespace Student_regestration
             SqlCommand cmd = new SqlCommand("UPDATE Users SET Subjects = @subs WHERE Id = @ID", con);
             SqlCommand courses = new SqlCommand("UPDATE Courses SET Students = @students WHERE Code = @Code", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(regnum.Text));
+            subjects = "";
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 if (checkedListBox1.GetItemChecked(i))
@@ -66,12 +67,16 @@ namespace Student_regestration
                     StudentList += int.Parse(regnum.Text);
                 }
             }
-
             cmd.Parameters.AddWithValue("@ID", StudentList);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-       
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            AdvisorPanel AP = new AdvisorPanel();
+            AP.Show();
+            this.Hide();
+        }
     }
 }

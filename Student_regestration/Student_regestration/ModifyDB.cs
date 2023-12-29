@@ -44,7 +44,7 @@ namespace Student_regestration
             cmd.Parameters.AddWithValue("@Date", newdate);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Edited the data for user " + Regid);
-            materialButton4_Click_1(sender, e);
+            materialButton4_Click(sender, e);
             regmod.ReadOnly = false;
             namemod.ReadOnly = true;
             datemod.Enabled = false;
@@ -54,7 +54,7 @@ namespace Student_regestration
 
         }
 
-        private void materialButton4_Click_1(object sender, EventArgs e)
+        private void materialButton4_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
@@ -98,16 +98,14 @@ namespace Student_regestration
             newterm = termmod.Text;
         }
 
-        private void namemod_TextChanged_1(object sender, EventArgs e)
-        {
-            newname = namemod.Text;
-        }
-
-        private void datemod_ValueChanged_1(object sender, EventArgs e)
+        private void datemod_ValueChanged(object sender, EventArgs e)
         {
             newdate = datemod.Value;
         }
 
-
+        private void namemod_TextChanged(object sender, EventArgs e)
+        {
+            newname = namemod.Text;
+        }
     }
 }

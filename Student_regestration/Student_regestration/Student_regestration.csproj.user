@@ -10,7 +10,7 @@
     <Compile Update="AdvisorPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateC.cs">
+    <Compile Update="CreateCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EnrollPanel.cs">
@@ -35,6 +35,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewEnrollees.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

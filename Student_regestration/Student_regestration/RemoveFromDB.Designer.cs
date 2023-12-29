@@ -51,7 +51,7 @@
             Del.Depth = 0;
             Del.HighEmphasis = true;
             Del.Icon = null;
-            Del.Location = new Point(181, 399);
+            Del.Location = new Point(42, 399);
             Del.Margin = new Padding(4, 6, 4, 6);
             Del.MouseState = MaterialSkin.MouseState.HOVER;
             Del.Name = "Del";

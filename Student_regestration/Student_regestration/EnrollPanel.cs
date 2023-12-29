@@ -43,6 +43,11 @@ namespace Student_regestration
             Application.Restart();
         }
 
-       
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            LoginPanel LP = new LoginPanel();
+            LP.Show();
+            this.Hide();
+        }
     }
 }

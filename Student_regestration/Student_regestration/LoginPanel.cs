@@ -44,21 +44,27 @@ namespace Student_regestration
                         Grade_Report GR = new Grade_Report(SignedIn);
                         GR.Show();
                     }
-                    if (reader["Type"].ToString() == "Lecturer")
+                    else if (reader["Type"].ToString() == "Lecturer")
                     {
                         LecturerClass a = new LecturerClass();
                         a.FetchUserData(Id, Pass);
                         Lecturer LP = new Lecturer(a);
                         LP.Show();
-                        
+
                     }
-                    if (reader["Type"].ToString() == "Teaching Assistant")
+                    else if (reader["Type"].ToString() == "Teaching Assistant")
                     {
                         TeachingAssistant a = new TeachingAssistant();
                         a.FetchUserData(Id, Pass);
                         TA LP = new TA(a);
                         LP.Show();
-                        
+
+                    }
+                    else if (reader["Type"].ToString() == "Advisor")
+                    {
+                        AdvisorPanel AP = new AdvisorPanel();
+                        AP.Show();
+
                     }
                     this.Hide();
                 }
@@ -74,7 +80,8 @@ namespace Student_regestration
         {
             EnrollPanel EP = new EnrollPanel();
             EP.Show();
-            this.Hide(); 
+            this.Hide();
         }
+
     }
 }

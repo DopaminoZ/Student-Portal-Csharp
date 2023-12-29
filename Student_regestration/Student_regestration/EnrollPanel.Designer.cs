@@ -43,6 +43,7 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             email = new TextBox();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            materialButton2 = new MaterialSkin.Controls.MaterialButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -179,7 +180,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(201, 316);
+            materialButton1.Location = new Point(60, 308);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -211,11 +212,32 @@
             materialLabel3.TabIndex = 56;
             materialLabel3.Text = "Email:";
             // 
+            // materialButton2
+            // 
+            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton2.Depth = 0;
+            materialButton2.HighEmphasis = true;
+            materialButton2.Icon = null;
+            materialButton2.Location = new Point(342, 308);
+            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton2.Name = "materialButton2";
+            materialButton2.NoAccentTextColor = Color.Empty;
+            materialButton2.Size = new Size(64, 36);
+            materialButton2.TabIndex = 57;
+            materialButton2.Text = "Back";
+            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton2.UseAccentColor = false;
+            materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
+            // 
             // EnrollPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(475, 389);
+            Controls.Add(materialButton2);
             Controls.Add(materialLabel3);
             Controls.Add(email);
             Controls.Add(materialButton1);
@@ -253,5 +275,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private TextBox email;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }

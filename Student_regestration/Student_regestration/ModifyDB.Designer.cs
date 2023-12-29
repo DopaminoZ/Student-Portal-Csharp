@@ -60,6 +60,7 @@
             materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton4.UseAccentColor = false;
             materialButton4.UseVisualStyleBackColor = true;
+            materialButton4.Click += materialButton4_Click;
             // 
             // displaymod
             // 
@@ -78,6 +79,7 @@
             datemod.Size = new Size(219, 23);
             datemod.TabIndex = 33;
             datemod.Value = new DateTime(2023, 11, 25, 0, 0, 0, 0);
+            datemod.ValueChanged += datemod_ValueChanged;
             // 
             // termmod
             // 
@@ -95,6 +97,7 @@
             namemod.PlaceholderText = "ModifyName";
             namemod.Size = new Size(219, 23);
             namemod.TabIndex = 32;
+            namemod.TextChanged += namemod_TextChanged;
             // 
             // regmod
             // 
@@ -158,7 +161,7 @@
             materialButton3.Depth = 0;
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(184, 399);
+            materialButton3.Location = new Point(52, 330);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
@@ -195,7 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(481, 450);
+            ClientSize = new Size(465, 394);
             Controls.Add(materialButton1);
             Controls.Add(materialButton4);
             Controls.Add(displaymod);
