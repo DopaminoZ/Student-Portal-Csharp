@@ -50,11 +50,13 @@
             typebox = new ComboBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            comboBox1 = new ComboBox();
             materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            Staffonly = new GroupBox();
             checkedListBox1 = new CheckedListBox();
+            errormes = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            Staffonly.SuspendLayout();
             SuspendLayout();
             // 
             // materialButton1
@@ -64,7 +66,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(223, 422);
+            materialButton1.Location = new Point(86, 366);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -80,9 +82,11 @@
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
+            materialLabel1.BackColor = SystemColors.Control;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(84, 121);
+            materialLabel1.ForeColor = Color.White;
+            materialLabel1.Location = new Point(84, 169);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(108, 19);
@@ -92,9 +96,11 @@
             // materialLabel2
             // 
             materialLabel2.AutoSize = true;
+            materialLabel2.BackColor = SystemColors.Control;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(84, 180);
+            materialLabel2.ForeColor = Color.White;
+            materialLabel2.Location = new Point(84, 228);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(47, 19);
@@ -104,9 +110,11 @@
             // materialLabel3
             // 
             materialLabel3.AutoSize = true;
+            materialLabel3.BackColor = SystemColors.Control;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(84, 238);
+            materialLabel3.ForeColor = Color.White;
+            materialLabel3.Location = new Point(84, 286);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(42, 19);
@@ -116,9 +124,11 @@
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
+            materialLabel4.BackColor = SystemColors.Control;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(84, 208);
+            materialLabel4.ForeColor = Color.White;
+            materialLabel4.Location = new Point(84, 256);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(94, 19);
@@ -127,28 +137,28 @@
             // 
             // reg
             // 
-            reg.Location = new Point(211, 119);
+            reg.Location = new Point(211, 167);
             reg.Name = "reg";
             reg.Size = new Size(219, 23);
             reg.TabIndex = 6;
             // 
             // name
             // 
-            name.Location = new Point(211, 178);
+            name.Location = new Point(211, 226);
             name.Name = "name";
             name.Size = new Size(219, 23);
             name.TabIndex = 8;
             // 
             // term
             // 
-            term.Location = new Point(211, 238);
+            term.Location = new Point(211, 286);
             term.Name = "term";
             term.Size = new Size(219, 23);
             term.TabIndex = 10;
             // 
             // dateob
             // 
-            dateob.Location = new Point(211, 207);
+            dateob.Location = new Point(211, 255);
             dateob.MaxDate = new DateTime(2023, 11, 25, 0, 0, 0, 0);
             dateob.Name = "dateob";
             dateob.Size = new Size(219, 23);
@@ -177,7 +187,7 @@
             // 
             // passbox
             // 
-            passbox.Location = new Point(211, 148);
+            passbox.Location = new Point(211, 196);
             passbox.Name = "passbox";
             passbox.Size = new Size(219, 23);
             passbox.TabIndex = 7;
@@ -185,9 +195,11 @@
             // materialLabel11
             // 
             materialLabel11.AutoSize = true;
+            materialLabel11.BackColor = SystemColors.Control;
             materialLabel11.Depth = 0;
             materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel11.Location = new Point(84, 152);
+            materialLabel11.ForeColor = Color.White;
+            materialLabel11.Location = new Point(84, 200);
             materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel11.Name = "materialLabel11";
             materialLabel11.Size = new Size(75, 19);
@@ -197,9 +209,11 @@
             // materialLabel12
             // 
             materialLabel12.AutoSize = true;
+            materialLabel12.BackColor = Color.Navy;
             materialLabel12.Depth = 0;
             materialLabel12.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel12.Location = new Point(84, 267);
+            materialLabel12.ForeColor = SystemColors.ActiveCaptionText;
+            materialLabel12.Location = new Point(232, 87);
             materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel12.Name = "materialLabel12";
             materialLabel12.Size = new Size(40, 19);
@@ -209,9 +223,11 @@
             // materialLabel7
             // 
             materialLabel7.AutoSize = true;
+            materialLabel7.BackColor = Color.Navy;
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel7.Location = new Point(2, 5);
+            materialLabel7.ForeColor = Color.White;
+            materialLabel7.Location = new Point(3, 6);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
             materialLabel7.Size = new Size(123, 19);
@@ -221,52 +237,58 @@
             // adminrb
             // 
             adminrb.AutoSize = true;
+            adminrb.BackColor = Color.SkyBlue;
             adminrb.Location = new Point(141, 5);
             adminrb.Name = "adminrb";
             adminrb.Size = new Size(61, 19);
             adminrb.TabIndex = 36;
             adminrb.TabStop = true;
             adminrb.Text = "Admin";
-            adminrb.UseVisualStyleBackColor = true;
+            adminrb.UseVisualStyleBackColor = false;
             // 
             // nonadminrb
             // 
             nonadminrb.AutoSize = true;
+            nonadminrb.BackColor = Color.SkyBlue;
             nonadminrb.Location = new Point(241, 5);
             nonadminrb.Name = "nonadminrb";
             nonadminrb.Size = new Size(89, 19);
             nonadminrb.TabIndex = 37;
             nonadminrb.TabStop = true;
             nonadminrb.Text = "Non-Admin";
-            nonadminrb.UseVisualStyleBackColor = true;
+            nonadminrb.UseVisualStyleBackColor = false;
             // 
             // femalerb
             // 
             femalerb.AutoSize = true;
+            femalerb.BackColor = Color.SkyBlue;
             femalerb.Location = new Point(241, 8);
             femalerb.Name = "femalerb";
             femalerb.Size = new Size(63, 19);
             femalerb.TabIndex = 40;
             femalerb.TabStop = true;
             femalerb.Text = "Female";
-            femalerb.UseVisualStyleBackColor = true;
+            femalerb.UseVisualStyleBackColor = false;
             // 
             // malerb
             // 
             malerb.AutoSize = true;
+            malerb.BackColor = Color.SkyBlue;
             malerb.Location = new Point(141, 7);
             malerb.Name = "malerb";
             malerb.Size = new Size(51, 19);
             malerb.TabIndex = 39;
             malerb.TabStop = true;
             malerb.Text = "Male";
-            malerb.UseVisualStyleBackColor = true;
+            malerb.UseVisualStyleBackColor = false;
             // 
             // materialLabel8
             // 
             materialLabel8.AutoSize = true;
+            materialLabel8.BackColor = SystemColors.Control;
             materialLabel8.Depth = 0;
             materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.ForeColor = Color.White;
             materialLabel8.Location = new Point(2, 8);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
@@ -277,18 +299,21 @@
             // typebox
             // 
             typebox.FormattingEnabled = true;
-            typebox.Items.AddRange(new object[] { "Undergrad", "Postgrad", "Lecturer", "Teaching Assistant" });
-            typebox.Location = new Point(211, 267);
+            typebox.ImeMode = ImeMode.Disable;
+            typebox.Items.AddRange(new object[] { "Lecturer", "Advisor", "Postgrad", "Teaching Assistant", "Undergrad" });
+            typebox.Location = new Point(344, 87);
             typebox.Name = "typebox";
             typebox.Size = new Size(219, 23);
             typebox.TabIndex = 11;
+            typebox.Text = "Lecturer";
+            typebox.SelectedIndexChanged += typebox_SelectedIndexChanged;
             // 
             // panel1
             // 
             panel1.Controls.Add(femalerb);
             panel1.Controls.Add(malerb);
             panel1.Controls.Add(materialLabel8);
-            panel1.Location = new Point(84, 350);
+            panel1.Location = new Point(84, 315);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 32);
             panel1.TabIndex = 42;
@@ -299,50 +324,64 @@
             panel2.Controls.Add(adminrb);
             panel2.Controls.Add(materialLabel7);
             panel2.ForeColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(84, 320);
+            panel2.Location = new Point(6, 244);
             panel2.Name = "panel2";
             panel2.Size = new Size(348, 27);
             panel2.TabIndex = 43;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "CC319", "CC317", "BA323", "EC339", "NE466", "EC320" });
-            comboBox1.Location = new Point(211, 296);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(219, 23);
-            comboBox1.TabIndex = 12;
-            // 
             // materialLabel13
             // 
             materialLabel13.AutoSize = true;
+            materialLabel13.BackColor = Color.Navy;
             materialLabel13.Depth = 0;
             materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel13.Location = new Point(84, 296);
+            materialLabel13.ForeColor = Color.White;
+            materialLabel13.Location = new Point(6, 22);
             materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel13.Name = "materialLabel13";
-            materialLabel13.Size = new Size(58, 19);
+            materialLabel13.Size = new Size(62, 19);
             materialLabel13.TabIndex = 44;
-            materialLabel13.Text = "Subject:";
+            materialLabel13.Text = "Courses:";
+            // 
+            // Staffonly
+            // 
+            Staffonly.Controls.Add(checkedListBox1);
+            Staffonly.Controls.Add(panel2);
+            Staffonly.Controls.Add(materialLabel13);
+            Staffonly.Location = new Point(447, 116);
+            Staffonly.Name = "Staffonly";
+            Staffonly.Size = new Size(373, 277);
+            Staffonly.TabIndex = 45;
+            Staffonly.TabStop = false;
             // 
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(458, 198);
+            checkedListBox1.Location = new Point(96, 22);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(180, 184);
+            checkedListBox1.Size = new Size(165, 202);
             checkedListBox1.TabIndex = 45;
+            // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(84, 423);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(12, 15);
+            errormes.TabIndex = 46;
+            errormes.Text = "-";
+            errormes.Visible = false;
             // 
             // AddtoDB
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(640, 506);
-            Controls.Add(checkedListBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(materialLabel13);
-            Controls.Add(panel2);
+            BackColor = Color.LightSkyBlue;
+            ClientSize = new Size(843, 447);
+            Controls.Add(errormes);
+            Controls.Add(Staffonly);
             Controls.Add(panel1);
             Controls.Add(typebox);
             Controls.Add(materialLabel12);
@@ -364,6 +403,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            Staffonly.ResumeLayout(false);
+            Staffonly.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,8 +439,9 @@
         private RadioButton nonadminrb;
         private RadioButton femalerb;
         private RadioButton malerb;
-        private ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private GroupBox Staffonly;
         private CheckedListBox checkedListBox1;
+        private Label errormes;
     }
 }

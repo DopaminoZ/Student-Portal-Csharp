@@ -8,7 +8,7 @@ namespace Student_regestration
 {
     public abstract class Person
     {
-        protected int ID { get; set; }
+        public int ID { get; set; }
         protected string Password { get; set; }
         protected string Name { get; set; }
         protected string Gender { get; set; }

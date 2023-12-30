@@ -26,5 +26,7 @@ namespace Student_regestration
         {
             Application.Restart();
         }
+
+
     }
 }

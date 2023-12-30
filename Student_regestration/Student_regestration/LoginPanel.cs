@@ -44,35 +44,27 @@ namespace Student_regestration
                         Grade_Report GR = new Grade_Report(SignedIn);
                         GR.Show();
                     }
-                    if (reader["Type"].ToString() == "Lecturer")
+                    else if (reader["Type"].ToString() == "Lecturer")
                     {
-                        int TermLec = int.Parse(reader["Term"].ToString());
-                        string TermSub = reader["Subjects"].ToString();
-                        if (reader["Admin"].ToString() == "true")
-                        {
-                            Lecturer LP = new Lecturer(TermLec, TermSub, true);
-                            LP.Show();
-                        }
-                        else
-                        {
-                            Lecturer LP = new Lecturer(TermLec, TermSub, false);
-                            LP.Show();
-                        }
+                        LecturerClass a = new LecturerClass();
+                        a.FetchUserData(Id, Pass);
+                        Lecturer LP = new Lecturer(a);
+                        LP.Show();
+
                     }
-                    if (reader["Type"].ToString() == "Teaching Assistant")
+                    else if (reader["Type"].ToString() == "Teaching Assistant")
                     {
-                        int TermLec = int.Parse(reader["Term"].ToString());
-                        string TermSub = reader["Subjects"].ToString();
-                        if (reader["Admin"].ToString() == "true")
-                        {
-                            TA LP = new TA(TermLec, TermSub, true);
-                            LP.Show();
-                        }
-                        else
-                        {
-                            TA LP = new TA(TermLec, TermSub, false);
-                            LP.Show();
-                        }
+                        TeachingAssistant a = new TeachingAssistant();
+                        a.FetchUserData(Id, Pass);
+                        TA LP = new TA(a);
+                        LP.Show();
+
+                    }
+                    else if (reader["Type"].ToString() == "Advisor")
+                    {
+                        AdvisorPanel AP = new AdvisorPanel();
+                        AP.Show();
+
                     }
                     this.Hide();
                 }
@@ -88,7 +80,8 @@ namespace Student_regestration
         {
             EnrollPanel EP = new EnrollPanel();
             EP.Show();
-            this.Hide(); 
+            this.Hide();
         }
+
     }
 }

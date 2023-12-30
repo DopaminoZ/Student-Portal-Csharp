@@ -40,9 +40,9 @@
             deletename.AutoSize = true;
             deletename.Location = new Point(124, 235);
             deletename.Name = "deletename";
-            deletename.Size = new Size(94, 15);
+            deletename.Size = new Size(86, 15);
             deletename.TabIndex = 23;
-            deletename.Text = "Student Name - ";
+            deletename.Text = "Person Name -";
             // 
             // Del
             // 
@@ -51,7 +51,7 @@
             Del.Depth = 0;
             Del.HighEmphasis = true;
             Del.Icon = null;
-            Del.Location = new Point(181, 399);
+            Del.Location = new Point(42, 384);
             Del.Margin = new Padding(4, 6, 4, 6);
             Del.MouseState = MaterialSkin.MouseState.HOVER;
             Del.Name = "Del";
@@ -76,12 +76,12 @@
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(42, 187);
+            materialLabel6.Location = new Point(70, 187);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
-            materialLabel6.Size = new Size(108, 19);
+            materialLabel6.Size = new Size(68, 19);
             materialLabel6.TabIndex = 21;
-            materialLabel6.Text = "Registration #: ";
+            materialLabel6.Text = "Portal Id :";
             // 
             // materialButton1
             // 
@@ -107,6 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SkyBlue;
             ClientSize = new Size(447, 450);
             Controls.Add(materialButton1);
             Controls.Add(deletename);
@@ -126,5 +127,6 @@
         private TextBox regdel;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private Label errormes;
     }
 }

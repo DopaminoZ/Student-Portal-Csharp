@@ -16,12 +16,12 @@ namespace Student_regestration
 {
     public partial class TA : Form
     {
-        public TA(int Term, string Subject, bool Admin)
+        TeachingAssistant xz = new TeachingAssistant();
+        public TA(TeachingAssistant a)
         {
+            xz = a;
             InitializeComponent();
-            LecturerTerm = Term;
-            LecturerSubject = Subject;
-            if (Admin)
+            if (a.Admin == "true")
             {
                 button1.Visible = true;
             }
@@ -29,45 +29,79 @@ namespace Student_regestration
             {
                 button1.Visible = false;
             }
-            ShowStudentList();
-        }
-        private int LecturerTerm;
-        private string LecturerSubject;
+            UpdCourseList();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
 
-        public void ShowStudentList()
+        }
+        public void UpdCourseList()
         {
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Term = @ID AND Type != 'Lecturer' AND Type != 'Teaching Assistant'", con);
-            cmd.Parameters.AddWithValue("@ID", LecturerTerm);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Courses WHERE TAs = @ID", con);
+            cmd.Parameters.AddWithValue("@ID", xz.ID);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    string regnum = reader["Id"].ToString();
-                    comboBox1.Items.Add(regnum);
+                    string Code = reader["Code"].ToString();
+                    comboBox2.Items.Add(Code);
                 }
 
             }
         }
-        public void displayGrades()
+        public void ShowStudentList()
         {
-            string sub = LecturerSubject;
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
+            string allStudents = "";
+            string[] students;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Courses WHERE Code = @Code", con);
+            cmd.Parameters.AddWithValue("@Code", comboBox2.Text);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    ReturnMarks(ref x, reader[LecturerSubject].ToString());
-                    label5.Text = x[2];
-                    label6.Text = x[3];
-                    label7.Text = x[4];
+                    allStudents = reader["Students"].ToString();
+                }
+            }
+            students = TA.getStudents(allStudents);
+            foreach (string student in students)
+            {
+                comboBox1.Items.Add(student);
+            }
+
+        }
+        static string[] getStudents(string input)
+        {
+            input = input.Substring(1);
+            string[] result = input.Split('-');
+            return result;
+        }
+        public void displayGrades()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
+                cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        ReturnMarks(ref x, reader[comboBox2.Text].ToString());
+                        label5.Text = x[2];
+                        label6.Text = x[3];
+                        label7.Text = x[4];
+
+                    }
 
                 }
-
+            }
+            catch (Exception ex)
+            {
+                errormes.Text = ex.Message;
             }
         }
         string[] x = new string[6];
@@ -115,17 +149,43 @@ namespace Student_regestration
         }
         public void UpdateGrades()
         {
-            x[2] = text7.Text;
-            x[3] = text12.Text;
-            x[4] = textwork.Text;
-            string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {LecturerSubject} = @mark WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
-            cmd.Parameters.AddWithValue("@mark", newmark);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text7.Text) ||
+                    string.IsNullOrWhiteSpace(text12.Text) ||
+                    string.IsNullOrWhiteSpace(textwork.Text))
+                {
+                    errormes.Text = "Please fill all fields.";
+                    errormes.Visible = true;
+                }
+                else if (double.Parse(text7.Text) > 30
+                    || double.Parse(text12.Text) > 20 ||
+                    double.Parse(textwork.Text) > 10)
+                {
+                    errormes.Text = "Some of the inputs exceed maximum mark...";
+                    errormes.Visible = true;
+                }
+                else
+                {
+                    x[2] = text7.Text;
+                    x[3] = text12.Text;
+                    x[4] = textwork.Text;
+                    string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
+                    SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
+                    cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@mark", newmark);
+                    cmd.ExecuteNonQuery();
+                    errormes.Visible = false;
+                    MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                errormes.Text = ex.Message;
+                errormes.Visible = true;
+            }
         }
 
         private void materialButton4_Click(object sender, EventArgs e)
@@ -148,6 +208,13 @@ namespace Student_regestration
         {
             AdminPanel AP = new AdminPanel();
             AP.Show();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            ShowStudentList();
+            displayGrades();
         }
     }
 }

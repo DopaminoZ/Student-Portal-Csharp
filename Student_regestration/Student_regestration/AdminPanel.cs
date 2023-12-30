@@ -37,5 +37,12 @@ namespace Student_regestration
             AD.Show();
             this.Hide();
         }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            ViewEnrollees VE = new ViewEnrollees();
+            VE.Show();
+            this.Hide();
+        }
     }
 }
