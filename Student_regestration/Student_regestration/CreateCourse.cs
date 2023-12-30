@@ -21,18 +21,26 @@ namespace Student_regestration
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            string columnName = code.Text;
-            SqlCommand cmd = new SqlCommand("insert into Courses ( Code,Name,Credit) values (@Code,@Name,@Credit)", con);
-            SqlCommand command = new SqlCommand($"ALTER TABLE marks ADD {columnName} VARCHAR(50)", con);
-            cmd.Parameters.AddWithValue("@Code", code.Text);
-            cmd.Parameters.AddWithValue("@Name", name.Text);
-            cmd.Parameters.AddWithValue("@Credit", int.Parse(credit.Text));
-            cmd.ExecuteNonQuery();
-            command.ExecuteNonQuery();
-            MessageBox.Show("Added course " + code.Text);
-            con.Close();
+            try
+            {
+                SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                con.Open();
+                string columnName = code.Text;
+                SqlCommand cmd = new SqlCommand("insert into Courses ( Code,Name,Credit) values (@Code,@Name,@Credit)", con);
+                SqlCommand command = new SqlCommand($"ALTER TABLE marks ADD {columnName} VARCHAR(50)", con);
+                cmd.Parameters.AddWithValue("@Code", code.Text);
+                cmd.Parameters.AddWithValue("@Name", name.Text);
+                cmd.Parameters.AddWithValue("@Credit", int.Parse(credit.Text));
+                cmd.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+                con.Close();
+                errormes.Visible = false;
+                MessageBox.Show("Added course " + code.Text);
+            }
+            catch (Exception ex)
+            {
+                errormes.Visible = true;
+            }
         }
 
         private void materialButton2_Click(object sender, EventArgs e)

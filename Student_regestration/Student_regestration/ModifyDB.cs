@@ -72,7 +72,7 @@ namespace Student_regestration
                         date = date.Substring(0, 9);
                     }
                     Regid = regmod.Text;
-                    displaymod.Text = String.Format("Student Name - {0}", studentName);
+                    displaymod.Text = String.Format("Person Name - {0}", studentName);
                     namedisplay.Text = studentName;
                     datedisplay.Text = date;
                     termdisplay.Text = reader["Term"].ToString();
@@ -87,7 +87,7 @@ namespace Student_regestration
                 }
                 else
                 {
-                    displaymod.Text = "Student not found!, try another Reg Num...";
+                    displaymod.Text = "Person not found!, try another Id...";
 
                 }
             }

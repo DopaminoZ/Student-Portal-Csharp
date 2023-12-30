@@ -30,6 +30,8 @@ namespace Student_regestration
                 button1.Visible = false;
             }
             UpdCourseList();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
         public void UpdCourseList()
@@ -78,21 +80,28 @@ namespace Student_regestration
         }
         public void displayGrades()
         {
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                if (reader.Read())
+                SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM marks WHERE Id = @ID", con);
+                cmd.Parameters.AddWithValue("@ID", comboBox1.Text);
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    ReturnMarks(ref x, reader[comboBox2.Text].ToString());
-                    label5.Text = x[2];
-                    label6.Text = x[3];
-                    label7.Text = x[4];
+                    if (reader.Read())
+                    {
+                        ReturnMarks(ref x, reader[comboBox2.Text].ToString());
+                        label5.Text = x[2];
+                        label6.Text = x[3];
+                        label7.Text = x[4];
+
+                    }
 
                 }
-
+            }
+            catch (Exception ex)
+            {
+                errormes.Text = ex.Message;
             }
         }
         string[] x = new string[6];
@@ -140,17 +149,43 @@ namespace Student_regestration
         }
         public void UpdateGrades()
         {
-            x[2] = text7.Text;
-            x[3] = text12.Text;
-            x[4] = textwork.Text;
-            string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
-            cmd.Parameters.AddWithValue("@mark", newmark);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text7.Text) ||
+                    string.IsNullOrWhiteSpace(text12.Text) ||
+                    string.IsNullOrWhiteSpace(textwork.Text))
+                {
+                    errormes.Text = "Please fill all fields.";
+                    errormes.Visible = true;
+                }
+                else if (double.Parse(text7.Text) > 30
+                    || double.Parse(text12.Text) > 20 ||
+                    double.Parse(textwork.Text) > 10)
+                {
+                    errormes.Text = "Some of the inputs exceed maximum mark...";
+                    errormes.Visible = true;
+                }
+                else
+                {
+                    x[2] = text7.Text;
+                    x[3] = text12.Text;
+                    x[4] = textwork.Text;
+                    string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
+                    SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
+                    cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@mark", newmark);
+                    cmd.ExecuteNonQuery();
+                    errormes.Visible = false;
+                    MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                errormes.Text = ex.Message;
+                errormes.Visible = true;
+            }
         }
 
         private void materialButton4_Click(object sender, EventArgs e)

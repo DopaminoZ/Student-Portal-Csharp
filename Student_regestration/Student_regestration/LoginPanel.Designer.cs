@@ -104,11 +104,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Cambria", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Cambria", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Red;
             label3.Location = new Point(418, 330);
             label3.Name = "label3";
-            label3.Size = new Size(41, 15);
+            label3.Size = new Size(45, 15);
             label3.TabIndex = 5;
             label3.Text = "label3";
             // 

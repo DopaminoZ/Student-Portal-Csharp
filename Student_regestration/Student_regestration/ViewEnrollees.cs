@@ -33,6 +33,7 @@ namespace Student_regestration
                     if (reader.Read())
                     {
                         no_of_enrollees = Convert.ToInt32(reader["row_count"]);
+
                     }
                 }
             }
@@ -58,6 +59,47 @@ namespace Student_regestration
             AdminPanel AP = new AdminPanel();
             AP.Show();
             this.Hide();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+
+                int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
+                int recordId = Convert.ToInt32(dataGridView1.Rows[selectedRowIndex].Cells["Id"].Value);
+
+                using (SqlConnection connection = new SqlConnection(AddtoDB.databaseConnection))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("DELETE FROM enrollments WHERE Id = @RecordId", connection))
+                    {
+                        command.Parameters.AddWithValue("@RecordId", recordId);
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+
+
+                dataGridView1.Rows.RemoveAt(selectedRowIndex);
+                no_of_enrollees--;
+                number.Text = "Number of Enrollees: " + no_of_enrollees.ToString();
+            }
+
+
+        }
+
+        private void RemoveAndRefresh(DataGridView dataGridView)
+        {
+
+
+        }
+
+        private void RemoveRowFromDatabase(int recordId)
+        {
+
+
         }
     }
 }

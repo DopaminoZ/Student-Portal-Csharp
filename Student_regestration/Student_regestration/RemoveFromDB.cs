@@ -33,10 +33,10 @@ namespace Student_regestration
 
             Confirm = new Label();
             Confirm.AutoSize = true;
-            Confirm.Location = new Point(152, 309);
+            Confirm.Location = new Point(132, 309);
             Confirm.Size = new Size(174, 15);
             Confirm.TabIndex = 18;
-            Confirm.Text = "Are you sure this is the student?";
+            Confirm.Text = "Are you sure this is the correct person?";
             this.Controls.Add(Confirm);
 
             Yes.Visible = false;
@@ -49,7 +49,7 @@ namespace Student_regestration
             Yes.Visible = false;
             No.Visible = false;
             Confirm.Visible = false;
-            deletename.Text = "Student Name - ";
+            deletename.Text = "Person Name - ";
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete Users where Id = @ID ", con);
@@ -69,7 +69,7 @@ namespace Student_regestration
             No.Visible = false;
             Confirm.Visible = false;
             regdel.ReadOnly = false;
-            deletename.Text = "Student Name - ";
+            deletename.Text = "Person Name - ";
             regdel.Text = "";
             MessageBox.Show("Reverted first request!");
         }
@@ -87,7 +87,7 @@ namespace Student_regestration
                 if (reader.Read())
                 {
                     string studentName = reader["Name"].ToString();
-                    deletename.Text = String.Format("Student Name - {0}", studentName);
+                    deletename.Text = String.Format("Person Name - {0}", studentName);
                     Yes.Visible = true;
                     No.Visible = true;
                     Confirm.Visible = true;
@@ -95,7 +95,7 @@ namespace Student_regestration
                 }
                 else
                 {
-                    deletename.Text = "Student not found!, try another Reg Num...";
+                    deletename.Text = "Person not found!, try another Id...";
                 }
             }
         }

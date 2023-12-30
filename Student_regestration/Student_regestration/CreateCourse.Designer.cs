@@ -36,6 +36,7 @@
             code = new TextBox();
             credit = new TextBox();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            errormes = new Label();
             SuspendLayout();
             // 
             // materialButton1
@@ -129,12 +130,25 @@
             materialButton2.UseVisualStyleBackColor = true;
             materialButton2.Click += materialButton2_Click;
             // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(28, 263);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(231, 15);
+            errormes.TabIndex = 8;
+            errormes.Text = "Some inputs are incorrect, check again...";
+            errormes.Visible = false;
+            // 
             // CreateCourse
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(330, 310);
+            Controls.Add(errormes);
             Controls.Add(materialButton2);
             Controls.Add(credit);
             Controls.Add(code);
@@ -159,5 +173,6 @@
         private TextBox code;
         private TextBox credit;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private Label errormes;
     }
 }

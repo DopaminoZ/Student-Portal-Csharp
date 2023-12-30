@@ -47,6 +47,7 @@
             button1 = new Button();
             comboBox2 = new ComboBox();
             label8 = new Label();
+            errormes = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -259,12 +260,25 @@
             label8.TabIndex = 27;
             label8.Text = "Course:";
             // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(23, 351);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(256, 15);
+            errormes.TabIndex = 28;
+            errormes.Text = "Some of the inputs are wrong, check again....";
+            errormes.Visible = false;
+            // 
             // Lecturer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(327, 361);
+            ClientSize = new Size(327, 378);
+            Controls.Add(errormes);
             Controls.Add(label8);
             Controls.Add(comboBox2);
             Controls.Add(button1);
@@ -312,5 +326,6 @@
         private Button button1;
         private ComboBox comboBox2;
         private Label label8;
+        private Label errormes;
     }
 }

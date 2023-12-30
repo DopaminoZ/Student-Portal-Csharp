@@ -43,6 +43,7 @@
             button1 = new Button();
             comboBox2 = new ComboBox();
             label4 = new Label();
+            errormes = new Label();
             SuspendLayout();
             // 
             // textwork
@@ -206,12 +207,25 @@
             label4.TabIndex = 26;
             label4.Text = "Course:";
             // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(14, 295);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(256, 15);
+            errormes.TabIndex = 29;
+            errormes.Text = "Some of the inputs are wrong, check again....";
+            errormes.Visible = false;
+            // 
             // TA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(278, 300);
+            ClientSize = new Size(278, 317);
+            Controls.Add(errormes);
             Controls.Add(label4);
             Controls.Add(comboBox2);
             Controls.Add(button1);
@@ -250,5 +264,6 @@
         private Button button1;
         private ComboBox comboBox2;
         private Label label4;
+        private Label errormes;
     }
 }

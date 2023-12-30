@@ -31,6 +31,8 @@ namespace Student_regestration
                 button1.Visible = false;
             }
             UpdCourseList();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         public void UpdCourseList()
         {
@@ -120,40 +122,48 @@ namespace Student_regestration
         public string calculateGrade()
         {
             double[] d = new double[4];
-            if (string.IsNullOrWhiteSpace(text7.Text) || string.IsNullOrWhiteSpace(text12.Text) || string.IsNullOrWhiteSpace(textwork.Text))
+            try
             {
-                if (label5.Text != "U")
-                    d[0] = double.Parse(label5.Text);
+                if (string.IsNullOrWhiteSpace(text7.Text) || string.IsNullOrWhiteSpace(text12.Text) || string.IsNullOrWhiteSpace(textwork.Text))
+                {
+                    if (label5.Text != "U")
+                        d[0] = double.Parse(label5.Text);
+                    else
+                        d[0] = 0;
+                    if (label6.Text != "U")
+                        d[1] = double.Parse(label6.Text);
+                    else
+                        d[1] = 0;
+                    if (label7.Text != "U")
+                        d[2] = double.Parse(label7.Text);
+                    else
+                        d[2] = 0;
+                }
                 else
-                    d[0] = 0;
-                if (label6.Text != "U")
-                    d[1] = double.Parse(label6.Text);
+                {
+                    if (text7.Text != "U")
+                        d[0] = double.Parse(text7.Text);
+                    else
+                        d[0] = 0;
+                    if (text12.Text != "U")
+                        d[1] = double.Parse(text12.Text);
+                    else
+                        d[1] = 0;
+                    if (textwork.Text != "U")
+                        d[2] = double.Parse(textwork.Text);
+                    else
+                        d[2] = 0;
+                }
+                if (textfinal.Text != "U")
+                    d[3] = double.Parse(textfinal.Text);
                 else
-                    d[1] = 0;
-                if (label7.Text != "U")
-                    d[2] = double.Parse(label7.Text);
-                else
-                    d[2] = 0;
+                    d[3] = 0;
             }
-            else
+            catch (Exception ex)
             {
-                if (text7.Text != "U")
-                    d[0] = double.Parse(text7.Text);
-                else
-                    d[0] = 0;
-                if (text12.Text != "U")
-                    d[1] = double.Parse(text12.Text);
-                else
-                    d[1] = 0;
-                if (textwork.Text != "U")
-                    d[2] = double.Parse(textwork.Text);
-                else
-                    d[2] = 0;
+                errormes.Text = ex.Message;
             }
-            if (textfinal.Text != "U")
-                d[3] = double.Parse(textfinal.Text);
-            else
-                d[3] = 0;
+
 
             double score = d[0] + d[1] + d[2] + d[3];
             switch (score)
@@ -224,21 +234,51 @@ namespace Student_regestration
         }
         public void UpdateGrades()
         {
-            x[2] = text7.Text;
-            x[3] = text12.Text;
-            x[4] = textwork.Text;
-            string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
-            cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
-            cmd.Parameters.AddWithValue("@mark", newmark);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text7.Text) ||
+                    string.IsNullOrWhiteSpace(text12.Text) ||
+                    string.IsNullOrWhiteSpace(textwork.Text))
+                {
+                    errormes.Text = "Please fill all fields.";
+                    errormes.Visible = true;
+                }
+                else if (double.Parse(text7.Text) > 30
+                    || double.Parse(text12.Text) > 20 ||
+                    double.Parse(textwork.Text) > 10 ||
+                    double.Parse(textfinal.Text) > 40)
+                {
+                    errormes.Text = "Some of the inputs exceed maximum mark...";
+                    errormes.Visible = true;
+                }
+                else
+                {
+
+                    x[2] = text7.Text;
+                    x[3] = text12.Text;
+                    x[4] = textwork.Text;
+                    string newmark = x[0] + " " + x[1] + " " + x[2] + " " + x[3] + " " + x[4] + " " + x[5];
+                    SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand($"UPDATE marks SET {comboBox2.Text} = @mark WHERE Id = @ID", con);
+                    cmd.Parameters.AddWithValue("@ID", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@mark", newmark);
+                    cmd.ExecuteNonQuery();
+                    errormes.Visible = false;
+                    MessageBox.Show("Updated the marks for user " + comboBox1.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                errormes.Text = ex.Message;
+                errormes.Visible = true;
+            }
+
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
+            displayGrades();
             UpdateGrades();
             displayGrades();
         }

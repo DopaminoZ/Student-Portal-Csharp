@@ -53,6 +53,7 @@
             materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             Staffonly = new GroupBox();
             checkedListBox1 = new CheckedListBox();
+            errormes = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             Staffonly.SuspendLayout();
@@ -65,7 +66,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(84, 379);
+            materialButton1.Location = new Point(86, 366);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -83,7 +84,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.BackColor = SystemColors.Control;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel1.ForeColor = Color.White;
             materialLabel1.Location = new Point(84, 169);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -97,7 +98,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.BackColor = SystemColors.Control;
             materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel2.ForeColor = Color.White;
             materialLabel2.Location = new Point(84, 228);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -111,7 +112,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.BackColor = SystemColors.Control;
             materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel3.ForeColor = Color.White;
             materialLabel3.Location = new Point(84, 286);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -125,7 +126,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.BackColor = SystemColors.Control;
             materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel4.ForeColor = Color.White;
             materialLabel4.Location = new Point(84, 256);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -196,7 +197,7 @@
             materialLabel11.AutoSize = true;
             materialLabel11.BackColor = SystemColors.Control;
             materialLabel11.Depth = 0;
-            materialLabel11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel11.ForeColor = Color.White;
             materialLabel11.Location = new Point(84, 200);
             materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
@@ -224,7 +225,7 @@
             materialLabel7.AutoSize = true;
             materialLabel7.BackColor = Color.Navy;
             materialLabel7.Depth = 0;
-            materialLabel7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel7.ForeColor = Color.White;
             materialLabel7.Location = new Point(3, 6);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
@@ -286,7 +287,7 @@
             materialLabel8.AutoSize = true;
             materialLabel8.BackColor = SystemColors.Control;
             materialLabel8.Depth = 0;
-            materialLabel8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel8.ForeColor = Color.White;
             materialLabel8.Location = new Point(2, 8);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
@@ -333,7 +334,7 @@
             materialLabel13.AutoSize = true;
             materialLabel13.BackColor = Color.Navy;
             materialLabel13.Depth = 0;
-            materialLabel13.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel13.ForeColor = Color.White;
             materialLabel13.Location = new Point(6, 22);
             materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
@@ -361,12 +362,25 @@
             checkedListBox1.Size = new Size(165, 202);
             checkedListBox1.TabIndex = 45;
             // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(84, 423);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(12, 15);
+            errormes.TabIndex = 46;
+            errormes.Text = "-";
+            errormes.Visible = false;
+            // 
             // AddtoDB
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSkyBlue;
             ClientSize = new Size(843, 447);
+            Controls.Add(errormes);
             Controls.Add(Staffonly);
             Controls.Add(panel1);
             Controls.Add(typebox);
@@ -428,5 +442,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private GroupBox Staffonly;
         private CheckedListBox checkedListBox1;
+        private Label errormes;
     }
 }

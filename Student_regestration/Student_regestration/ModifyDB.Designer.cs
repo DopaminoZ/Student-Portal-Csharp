@@ -67,9 +67,9 @@
             displaymod.AutoSize = true;
             displaymod.Location = new Point(114, 135);
             displaymod.Name = "displaymod";
-            displaymod.Size = new Size(94, 15);
+            displaymod.Size = new Size(89, 15);
             displaymod.TabIndex = 40;
-            displaymod.Text = "Student Name - ";
+            displaymod.Text = "Person Name - ";
             // 
             // datemod
             // 
@@ -150,9 +150,9 @@
             materialLabel10.Location = new Point(52, 95);
             materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel10.Name = "materialLabel10";
-            materialLabel10.Size = new Size(108, 19);
+            materialLabel10.Size = new Size(68, 19);
             materialLabel10.TabIndex = 36;
-            materialLabel10.Text = "Registration #: ";
+            materialLabel10.Text = "Portal Id :";
             // 
             // materialButton3
             // 
