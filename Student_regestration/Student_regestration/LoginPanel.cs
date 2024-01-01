@@ -66,6 +66,13 @@ namespace Student_regestration
                         AP.Show();
 
                     }
+                    else if (reader["Type"].ToString() == "Postgrad")
+                    {
+                        Postgrad SignedIn = new Postgrad();
+                        SignedIn.FetchUserData(Id, Pass);
+                        RegisterPost RP = new RegisterPost(SignedIn);
+                        RP.Show();
+                    }
                     this.Hide();
                 }
                 else

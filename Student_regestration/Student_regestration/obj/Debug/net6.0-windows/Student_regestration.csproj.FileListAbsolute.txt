@@ -124,3 +124,5 @@ C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestrati
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.CreateCourse.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.ViewEnrollees.resources
 C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.RegisterPost.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.AddProg.resources
+C:\Users\aliba\Desktop\Student_regestration\Student-Portal-C-\Student_regestration\Student_regestration\obj\Debug\net6.0-windows\Student_regestration.ViewApplications.resources

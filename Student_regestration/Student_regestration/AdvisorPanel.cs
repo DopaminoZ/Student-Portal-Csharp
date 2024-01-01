@@ -35,5 +35,19 @@ namespace Student_regestration
         {
             Application.Restart();
         }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            AddProg addProg = new AddProg();
+            addProg.Show();
+            this.Hide();
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            ViewApplications viewApplications = new ViewApplications();
+            viewApplications.Show();
+            
+        }
     }
 }
