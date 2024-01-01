@@ -48,27 +48,29 @@ namespace Student_regestration
         }
         private void addToStudentList(string mada)
         {
-            string StudentList = "";
             SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
             con.Open();
-            SqlCommand read = new SqlCommand("SELECT * from Courses Where Code = @Code", con);
-            SqlCommand cmd = new SqlCommand("update Courses SET Students = @ID Where Code = @Code", con);
+
+            string studentList = "";
+
+            SqlCommand read = new SqlCommand("SELECT Students FROM Courses WHERE Code = @Code", con);
             read.Parameters.AddWithValue("@Code", mada);
-            cmd.Parameters.AddWithValue("@Code", mada);
+
             using (SqlDataReader reader = read.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    StudentList = reader["Students"].ToString();
-                    StudentList += "-" + int.Parse(regnum.Text);
-                }
-                else
-                {
-                    StudentList += int.Parse(regnum.Text);
+                    studentList = reader["Students"].ToString();
                 }
             }
-            cmd.Parameters.AddWithValue("@ID", StudentList);
-            cmd.ExecuteNonQuery();
+                studentList += "-" + int.Parse(regnum.Text);
+
+                SqlCommand cmd = new SqlCommand("UPDATE Courses SET Students = @ID WHERE Code = @Code", con);
+                cmd.Parameters.AddWithValue("@Code", mada);
+                cmd.Parameters.AddWithValue("@ID", studentList);
+                cmd.ExecuteNonQuery();
+            
+
             con.Close();
         }
 
@@ -78,5 +80,7 @@ namespace Student_regestration
             AP.Show();
             this.Hide();
         }
+
+       
     }
 }

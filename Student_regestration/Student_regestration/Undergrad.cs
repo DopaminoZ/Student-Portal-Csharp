@@ -161,7 +161,7 @@ namespace Student_regestration
                             GR.mark121.Text = parts[3];
                             GR.mark1.Text = parts[4];
                             GR.markG1.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 1)/3).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 1)/3).ToString("0.00");
                             break;
                         case 2:
                             GR.panel1.Visible = true;
@@ -180,7 +180,7 @@ namespace Student_regestration
                             GR.mark122.Text = parts[3];
                             GR.mark2.Text = parts[4];
                             GR.markG2.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 2)/6).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 2)/6).ToString("0.00");
                             break;
                         case 3:
                             GR.panel1.Visible = true;
@@ -207,7 +207,7 @@ namespace Student_regestration
                             GR.mark123.Text = parts[3];
                             GR.mark3.Text = parts[4];
                             GR.markG3.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 3) / 9).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 3) / 9).ToString("0.00");
                             break;
                         case 4:
                             GR.panel1.Visible = true;
@@ -242,7 +242,7 @@ namespace Student_regestration
                             GR.mark124.Text = parts[3];
                             GR.mark4.Text = parts[4];
                             GR.markG4.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 4) / 12).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 4) / 12).ToString("0.00");
                             break;
                         case 5:
                             GR.panel1.Visible = true;
@@ -285,7 +285,7 @@ namespace Student_regestration
                             GR.mark125.Text = parts[3];
                             GR.mark5.Text = parts[4];
                             GR.markG5.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 5) / 15).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 5) / 15).ToString("0.00");
                             break;
                         case 6:
                             GR.panel1.Visible = true;
@@ -336,7 +336,7 @@ namespace Student_regestration
                             GR.mark126.Text = parts[3];
                             GR.mark6.Text = parts[4];
                             GR.markG6.Text = parts[5];
-                            GR.GPA.Text = (CalculateGPA(GR, 6) / 18).ToString();
+                            GR.GPA.Text = (CalculateGPA(GR, 6) / 18).ToString("0.00");
                             break;
                     }
                 }

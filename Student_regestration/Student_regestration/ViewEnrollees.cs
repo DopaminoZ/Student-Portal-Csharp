@@ -56,8 +56,6 @@ namespace Student_regestration
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            AdminPanel AP = new AdminPanel();
-            AP.Show();
             this.Hide();
         }
 

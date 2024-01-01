@@ -42,7 +42,7 @@ namespace Student_regestration
         {
             ViewEnrollees VE = new ViewEnrollees();
             VE.Show();
-            this.Hide();
+            
         }
     }
 }
