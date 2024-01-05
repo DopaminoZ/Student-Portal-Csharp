@@ -33,6 +33,7 @@
             checkedListBox1 = new CheckedListBox();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            errormes = new Label();
             SuspendLayout();
             // 
             // regnum
@@ -99,12 +100,25 @@
             materialButton2.UseVisualStyleBackColor = true;
             materialButton2.Click += materialButton2_Click;
             // 
+            // errormes
+            // 
+            errormes.AutoSize = true;
+            errormes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            errormes.ForeColor = Color.Red;
+            errormes.Location = new Point(141, 84);
+            errormes.Name = "errormes";
+            errormes.Size = new Size(100, 15);
+            errormes.TabIndex = 6;
+            errormes.Text = "User not found...";
+            errormes.Visible = false;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
             ClientSize = new Size(345, 451);
+            Controls.Add(errormes);
             Controls.Add(materialButton2);
             Controls.Add(materialButton1);
             Controls.Add(checkedListBox1);
@@ -123,5 +137,6 @@
         private CheckedListBox checkedListBox1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private Label errormes;
     }
 }

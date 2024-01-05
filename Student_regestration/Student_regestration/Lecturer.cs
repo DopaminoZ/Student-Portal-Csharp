@@ -77,13 +77,33 @@ namespace Student_regestration
             }
 
         }
+
+
         static string[] getStudents(string input)
         {
             input = input.Substring(1);
-            string[] result = input.Split('-');
-            return result;
+            string[] studentIds = input.Split('-');
+            List<string> result = new List<string>();
+            using (SqlConnection con = new SqlConnection(AddtoDB.databaseConnection))
+            {
+                con.Open();
+
+                foreach (string studentId in studentIds)
+                {
+                    // CHECK TO SEE IF STUDENT WASN'T DELETED
+                    SqlCommand checkUserCmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Id = @UserId", con);
+                    checkUserCmd.Parameters.AddWithValue("@UserId", studentId);
+                    int userCount = (int)checkUserCmd.ExecuteScalar();
+                    if (userCount > 0)
+                    {
+                        result.Add(studentId);
+                    }
+                }
+            }
+
+            return result.ToArray();
         }
-        private static void ReturnMarks(ref string[] x, string all)
+            private static void ReturnMarks(ref string[] x, string all)
         {
             int i = 0;
             int j = 0;

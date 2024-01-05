@@ -27,24 +27,54 @@ namespace Student_regestration
         string subjects = "";
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Users SET Subjects = @subs WHERE Id = @ID", con);
-            SqlCommand courses = new SqlCommand("UPDATE Courses SET Students = @students WHERE Code = @Code", con);
-            cmd.Parameters.AddWithValue("@ID", int.Parse(regnum.Text));
-            subjects = "";
-            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            int studentId = int.Parse(regnum.Text);
+
+            if (StudentExists(studentId))
             {
-                if (checkedListBox1.GetItemChecked(i))
+                SqlConnection con = new SqlConnection(AddtoDB.databaseConnection);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("UPDATE Users SET Subjects = @subs WHERE Id = @ID", con);
+                SqlCommand courses = new SqlCommand("UPDATE Courses SET Students = @students WHERE Code = @Code", con);
+
+                cmd.Parameters.AddWithValue("@ID", studentId);
+                subjects = "";
+
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
-                    subjects += checkedListBox1.Items[i].ToString() + "-";
-                    addToStudentList(checkedListBox1.Items[i].ToString());
+                    if (checkedListBox1.GetItemChecked(i))
+                    {
+                        subjects += checkedListBox1.Items[i].ToString() + "-";
+                        addToStudentList(checkedListBox1.Items[i].ToString());
+                    }
                 }
+
+                cmd.Parameters.AddWithValue("@subs", subjects);
+                cmd.ExecuteNonQuery();
+                errormes.Visible = false;
+                MessageBox.Show("Registered courses for student - " + regnum.Text);
+                con.Close();
+
             }
-            cmd.Parameters.AddWithValue("@subs", subjects);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Registered courses for student - " + regnum.Text);
-            con.Close();
+            else
+            {
+                errormes.Visible = true;
+            }
+        }
+
+        private bool StudentExists(int studentId)
+        {
+            using (SqlConnection con = new SqlConnection(AddtoDB.databaseConnection))
+            {
+                con.Open();
+
+                SqlCommand checkUserCmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Id = @UserId", con);
+                checkUserCmd.Parameters.AddWithValue("@UserId", studentId);
+
+                int userCount = (int)checkUserCmd.ExecuteScalar();
+
+                return userCount > 0;
+            }
         }
         private void addToStudentList(string mada)
         {
@@ -63,13 +93,18 @@ namespace Student_regestration
                     studentList = reader["Students"].ToString();
                 }
             }
-                studentList += "-" + int.Parse(regnum.Text);
+
+            int studentIdToAdd = int.Parse(regnum.Text);
+
+            if (!studentList.Split('-').Contains(studentIdToAdd.ToString()))
+            {
+                studentList += "-" + studentIdToAdd;
 
                 SqlCommand cmd = new SqlCommand("UPDATE Courses SET Students = @ID WHERE Code = @Code", con);
                 cmd.Parameters.AddWithValue("@Code", mada);
                 cmd.Parameters.AddWithValue("@ID", studentList);
                 cmd.ExecuteNonQuery();
-            
+            }
 
             con.Close();
         }
@@ -81,6 +116,6 @@ namespace Student_regestration
             this.Hide();
         }
 
-       
+
     }
 }
