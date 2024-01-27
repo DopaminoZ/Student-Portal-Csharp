@@ -10,7 +10,7 @@ namespace Student_regestration
     {
         public int ID { get; set; }
         protected string Password { get; set; }
-        protected string Name { get; set; }
+        public string Name { get; set; }
         protected string Gender { get; set; }
         protected DateTime DoB { get; set; }
 

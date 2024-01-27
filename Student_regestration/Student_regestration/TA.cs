@@ -65,11 +65,19 @@ namespace Student_regestration
                     allStudents = reader["Students"].ToString();
                 }
             }
-            students = TA.getStudents(allStudents);
-            foreach (string student in students)
+
+            if (allStudents.Length > 1)
             {
-                comboBox1.Items.Add(student);
+                students = TA.getStudents(allStudents);
+                foreach (string student in students)
+                {
+                    if (!comboBox1.Items.Contains(student))
+                    {
+                        comboBox1.Items.Add(student);
+                    }
+                }
             }
+            
 
         }
         static string[] getStudents(string input)

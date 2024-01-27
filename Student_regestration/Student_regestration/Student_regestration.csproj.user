@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AddProg.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddtoDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -25,6 +28,9 @@
     <Compile Update="Register.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RegisterPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="RemoveFromDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -35,6 +41,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewApplications.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ViewEnrollees.cs">

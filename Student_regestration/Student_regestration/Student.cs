@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_regestration
 {
-    public class Student : Person
+    public abstract class Student : Person
     {
         public Student() : base()
         {

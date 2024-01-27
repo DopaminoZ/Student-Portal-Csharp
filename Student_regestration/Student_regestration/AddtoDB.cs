@@ -12,10 +12,11 @@ namespace Student_regestration
 
 
         public static string databaseConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\aliba\\Desktop\\Student_regestration\\Student-Portal-C-\\Student_regestration\\Student_regestration\\Database1.mdf;Integrated Security=True";
+        List<Course> courses = Course.loadCourses();
         public AddtoDB()
         {
             InitializeComponent();
-            List<Course> courses = Course.loadCourses();
+            
             foreach (Course x in courses)
             {
                 checkedListBox1.Items.Add(x.Code);
@@ -30,7 +31,6 @@ namespace Student_regestration
                 SqlConnection con = new SqlConnection(databaseConnection);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("insert into Users ( Id,Password,Name,Term,DoB,Gender,Type,Admin) values (@Id,@Pass,@Name,@Term,@DoB,@Gender,@Type,@Admin)", con);
-                SqlCommand marks = new SqlCommand("insert into marks ( Id,CC319,CC317,NE466,EC320,EC339,BA323,EE328,CC215,CC216,BA224,EC232,EC238,EC218) values (@Id,@CC319,@CC317,@NE466,@EC320,@EC339,@BA323,@EE328,@CC215,@CC216,@BA224,@EC232,@EC238,@EC218)", con);
                 cmd.Parameters.AddWithValue("@Id", int.Parse(reg.Text));
                 cmd.Parameters.AddWithValue("@Pass", passbox.Text);
                 cmd.Parameters.AddWithValue("@Name", name.Text);
@@ -64,21 +64,7 @@ namespace Student_regestration
                 cmd.ExecuteNonQuery();
                 if (typebox.Text == "Undergrad")
                 {
-                    marks.Parameters.AddWithValue("@Id", int.Parse(reg.Text));
-                    marks.Parameters.AddWithValue("@CC319", "CC319 Advanced-Programming U U U U");
-                    marks.Parameters.AddWithValue("@CC317", "CC317 Digital-Systems U U U U");
-                    marks.Parameters.AddWithValue("@NE466", "NE466 Environmental-Science U U U U");
-                    marks.Parameters.AddWithValue("@EC320", "EC320 Communication-Theory U U U U");
-                    marks.Parameters.AddWithValue("@EC339", "EC339 Electronics-II U U U U");
-                    marks.Parameters.AddWithValue("@BA323", "BA323 Mathematics-V U U U U");
-                    marks.Parameters.AddWithValue("@EE328", "EE328 Electrical-Power U U U U");
-                    marks.Parameters.AddWithValue("@BA224", "BA224 Mathematics-IV U U U U");
-                    marks.Parameters.AddWithValue("@CC215", "CC215 Data-Structure U U U U");
-                    marks.Parameters.AddWithValue("@CC216", "CC216 Digital-Logic U U U U");
-                    marks.Parameters.AddWithValue("@EC232", "EC232 Electrical-Circuits-II U U U U");
-                    marks.Parameters.AddWithValue("@EC238", "EC238 Electronics-I U U U U");
-                    marks.Parameters.AddWithValue("@EC218", "EC218 Measurements U U U U");
-                    marks.ExecuteNonQuery();
+                    InsertDataIntoMarksTable(courses, int.Parse(reg.Text));
                 }
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
@@ -164,7 +150,30 @@ namespace Student_regestration
                 con.Close();
             }
         }
+        static void InsertDataIntoMarksTable(List<Course> courses, int Id)
+        {
+            using (SqlConnection con = new SqlConnection(databaseConnection))
+            {
+                con.Open();
 
+                string columns = "Id," + string.Join(",", courses.Select(course => course.Code));
+                string values = "@Id," + string.Join(",", courses.Select(course => $"@{course.Code}"));
+
+                string sqlCommandText = $"INSERT INTO marks ({columns}) VALUES ({values})";
+
+                using (SqlCommand marks = new SqlCommand(sqlCommandText, con))
+                {
+                    marks.Parameters.AddWithValue("@Id", Id); 
+
+                    foreach (Course course in courses)
+                    {
+                        marks.Parameters.AddWithValue($"@{course.Code}", $"{course.Code} {course.Name} U U U U");
+                    }
+
+                    marks.ExecuteNonQuery();
+                }
+            }
+        }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
