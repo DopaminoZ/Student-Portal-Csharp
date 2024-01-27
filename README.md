@@ -6,15 +6,16 @@ Key Achievements:
 
 Developed a feature that allows advisors to create new courses and register students, streamlining the course management process.
 Implemented functionality for postgraduate students to apply for postgraduate studies through a user-friendly interface.
+
 *Efficient Student and Marks Management:
 
 Designed a system that enables lecturers to easily access their students, view relevant information, and efficiently update marks.
 Extended the same capabilities to Teaching Assistants (TAs), empowering them to manage student data and grades effectively.
 Implemented a user-friendly interface for students to view their grades, providing them with easy access to their academic performance.
+
 *User-Friendly Interface:
 
 Created an intuitive and user-friendly interface for all user roles, ensuring a seamless and enjoyable experience for advisors, lecturers, postgraduate students, TAs, and undergraduates.
 
 My report for the project, that includes UML Diagram, snippets for the UI.
-<iframe src="https://drive.google.com/file/d/1j63on2GSbgFyXzg2NTSHTn6e7IxFkYL7/preview" width="640" height="480"></iframe>
-
+https://drive.google.com/file/d/1j63on2GSbgFyXzg2NTSHTn6e7IxFkYL7/view?usp=sharing
