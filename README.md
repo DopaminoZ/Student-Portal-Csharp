@@ -16,4 +16,5 @@ Implemented a user-friendly interface for students to view their grades, providi
 Created an intuitive and user-friendly interface for all user roles, ensuring a seamless and enjoyable experience for advisors, lecturers, postgraduate students, TAs, and undergraduates.
 
 My report for the project, that includes UML Diagram, snippets for the UI.
-[embed](https://drive.google.com/file/d/1j63on2GSbgFyXzg2NTSHTn6e7IxFkYL7/view?usp=sharing)https://drive.google.com/file/d/1j63on2GSbgFyXzg2NTSHTn6e7IxFkYL7/view?usp=sharing[/embed]
+<iframe src="https://drive.google.com/file/d/1j63on2GSbgFyXzg2NTSHTn6e7IxFkYL7/preview" width="640" height="480"></iframe>
+
